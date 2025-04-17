@@ -76,6 +76,7 @@
     <Component id="442" name="PWR" path="" type="2"/>
     <Component id="444" name="GPIO" path="" type="2"/>
     <Component id="449" name="IWDG" path="" type="2"/>
+    <Component id="453" name="I2C" path="" type="2"/>
     <Component id="454" name="DBGMCU" path="" type="2"/>
     <Component id="456" name="TIM" path="" type="2"/>
     <Component id="457" name="ADC" path="" type="2"/>
@@ -104,10 +105,11 @@
     <File name="Wojtek_SRC/PWM" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_adc.c" path="stm_lib/src/stm32f10x_adc.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_iwdg.h" path="stm_lib/inc/stm32f10x_iwdg.h" type="1"/>
+    <File name="Wojtek_SRC/SSD1306" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
-    <File name="Wojtek_SRC/Main/main.h" path="Wojtek_SRC/main.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_pwr.c" path="stm_lib/src/stm32f10x_pwr.c" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
+    <File name="Wojtek_SRC/Main/main.h" path="Wojtek_SRC/main.h" type="1"/>
     <File name="Wojtek_SRC/Timers/timers.h" path="Wojtek_SRC/Timers/timers.h" type="1"/>
     <File name="Wojtek_SRC/WDG" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
@@ -122,6 +124,8 @@
     <File name="cmsis/core_cm3.h" path="cmsis/core_cm3.h" type="1"/>
     <File name="Wojtek_SRC/Main" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_rcc.c" path="stm_lib/src/stm32f10x_rcc.c" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/OLED.c" path="Wojtek_SRC/SSD1306/OLED.c" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/ssd1306_font_11_18.c" path="Wojtek_SRC/SSD1306/ssd1306_font_11_18.c" type="1"/>
     <File name="Wojtek_SRC/PWM/PWM.h" path="Wojtek_SRC/PWM_SRC/PWM.h" type="1"/>
     <File name="README.md" path="README.md" type="1"/>
     <File name="Wojtek_SRC/Timers/timers.c" path="Wojtek_SRC/Timers/timers.c" type="1"/>
@@ -132,9 +136,14 @@
     <File name="stm_lib" path="" type="2"/>
     <File name="stm_lib/inc/stm32f10x_adc.h" path="stm_lib/inc/stm32f10x_adc.h" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" path="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_rcc.h" path="stm_lib/inc/stm32f10x_rcc.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_i2c.h" path="stm_lib/inc/stm32f10x_i2c.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
     <File name="Wojtek_SRC/ADC/ADC_Power_check.c" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.c" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/ssd1306_font_7_10.c" path="Wojtek_SRC/SSD1306/ssd1306_font_7_10.c" type="1"/>
+    <File name="stm_lib/src/stm32f10x_i2c.c" path="stm_lib/src/stm32f10x_i2c.c" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/OLED.h" path="Wojtek_SRC/SSD1306/OLED.h" type="1"/>
     <File name="stm_lib/inc" path="" type="2"/>
     <File name="Wojtek_SRC/LED/LED.c" path="Wojtek_SRC/LED/LED.c" type="1"/>
   </Files>

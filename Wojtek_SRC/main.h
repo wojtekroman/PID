@@ -1,5 +1,5 @@
 // *************** MAIN.H  ****************************
-#ifndef MANI_H
+#ifndef MAIN_H
 #define MAIN_H
 
 #define TRUE	1
