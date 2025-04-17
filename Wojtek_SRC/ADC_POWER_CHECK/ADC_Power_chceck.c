@@ -249,29 +249,9 @@ void ADC1_2_IRQHandler(void)
 uint32_t test32_t;
 	if ((PowerSupply.ADCx->SR & ADC_FLAG_EOC) )
 	{
-		if (PowerSupply.ADCx->DR > PowerSupply.PowerValue ? PowerSupply.ADCx->DR - PowerSupply.PowerValue > 400 :  PowerSupply.PowerValue - PowerSupply.ADCx->DR >400 )
-		{
-			PowerSupply.PowerValue = PowerSupply.ADCx->DR;
-		}
-		else{
-			PowerSupply.PowerValue +=PowerSupply.ADCx->DR;
-			PowerSupply.PowerValue /=2;
-		}
 
+		PowerSupply.PowerValue = PowerSupply.ADCx->DR;
 		PowerSupply.ADCx->SR = (uint32_t)(ADC_FLAG_EOC ) ;
 	}
 
-	if ((ADC2->SR & ADC_FLAG_EOC) )
-	{
-		if (ADC2->DR > Temperature.ADC_Value ? ADC2->DR - Temperature.ADC_Value > 200 :  Temperature.ADC_Value - ADC2->DR >200 )
-		{
-			Temperature.ADC_Value= ADC2->DR;
-		}else
-		{
-			Temperature.ADC_Value+=ADC2->DR;
-			Temperature.ADC_Value/=2;
-		}
-		Temperature.sreg |= NTC4K7_ADC_NEW_VALUE;
-		ADC2->SR = (uint32_t)(ADC_FLAG_EOC);
-	}
 }

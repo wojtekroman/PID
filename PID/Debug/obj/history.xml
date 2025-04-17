@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103C8 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\PID\cmsis_boot -I..\..\..\workspace\PID\Wojtek_SRC\WDG -I..\..\..\workspace\PID\Wojtek_SRC\PWM_SRC -I..\..\..\workspace\PID\Wojtek_SRC\LED -I..\..\..\workspace\PID\cmsis -I..\..\..\workspace\PID\Wojtek_SRC\Timers -I..\..\..\workspace\PID\stm_lib\inc -I..\..\..\workspace\PID\Wojtek_SRC -I..\..\..\workspace\PID -I..\..\..\workspace\PID\Wojtek_SRC\ADC_POWER_CHECK -I..\..\..\workspace -I..\..\..\workspace\PID\stm_lib">
+      <target file="stm32f10x_dbgmcu.o" lastModified="19645690213">
+         <source file="..\..\..\stm_lib\src\stm32f10x_dbgmcu.c" lastModified="19644f44eea"/>
+      </target>
+      <target file="LED.o" lastModified="1964569058d">
+         <source file="..\..\..\Wojtek_SRC\LED\LED.c" lastModified="16c56c663d0"/>
+      </target>
+      <target file="stm32f10x_iwdg.o" lastModified="19645696a70">
+         <source file="..\..\..\stm_lib\src\stm32f10x_iwdg.c" lastModified="196456959a0"/>
+      </target>
+      <target file="stm32f10x_rcc.o" lastModified="19645690461">
+         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="19644f38a96"/>
+      </target>
+      <target file="PWM.o" lastModified="1964571946c">
+         <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="19645718bf8"/>
+      </target>
+      <target file="stm32f10x_pwr.o" lastModified="196456902a9">
+         <source file="..\..\..\stm_lib\src\stm32f10x_pwr.c" lastModified="19644f3919e"/>
+      </target>
+      <target file="misc.o" lastModified="1964569055f">
+         <source file="..\..\..\stm_lib\src\misc.c" lastModified="19644f45b76"/>
+      </target>
+      <target file="WDG.o" lastModified="19645696a40">
+         <source file="..\..\..\Wojtek_SRC\WDG\WDG.c" lastModified="16e45e3d730"/>
+      </target>
+      <target file="startup_stm32f10x_md.o" lastModified="1964569026d">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="19644f38ab4"/>
+      </target>
+      <target file="stm32f10x_gpio.o" lastModified="19645690353">
+         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="19644f396f8"/>
+      </target>
+      <target file="timers.o" lastModified="1964569041b">
+         <source file="..\..\..\Wojtek_SRC\Timers\timers.c" lastModified="17069750e60"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="19645690245">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="19644f38ae6"/>
+      </target>
+      <target file="syscalls.o" lastModified="19645690529">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="19644f374ca"/>
+      </target>
+      <target file="ADC_Power_chceck.o" lastModified="1964569030d">
+         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964551d888"/>
+      </target>
+      <target file="stm32f10x_tim.o" lastModified="196456901cd">
+         <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="19644f3bdef"/>
+      </target>
+      <target file="stm32f10x_adc.o" lastModified="196456904b1">
+         <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="19644f3c2c6"/>
+      </target>
+      <target file="main.o" lastModified="196457193a4">
+         <source file="..\..\..\Wojtek_SRC\main.c" lastModified="1964566acde"/>
+      </target>
+      <target file="stm32f10x_usart.o" lastModified="196456904f7">
+         <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="19644f3cee3"/>
+      </target>
+   </processor>
+</history>

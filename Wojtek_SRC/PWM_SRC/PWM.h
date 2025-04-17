@@ -6,24 +6,24 @@
 
 #endif
 
-	#define PWM_DEF_ON_SPEED 			((FAN_MAX_SPED + FAN_MIN_SPEED)/2)	//800
+	#define PWM_DEF_ON_SPEED 		((FAN_MAX_SPED + FAN_MIN_SPEED)/2)	//800
 	#define PWM_NEW_VALUE			0x01
 	#define	PWM_DEF_FREQ			SystemCoreClock
 	#define PWM_TOTAL_MAX_SPEED		72000000
-	#define PWM_SET_FREQ(freq)				((SystemCoreClock/freq)-1)
+	#define PWM_SET_FREQ(freq)		((SystemCoreClock/freq)-1)
 
 
-	#define PWM_TIMER			TIM1
+	#define PWM_TIMER			TIM4
 
 
-#define PWM_PORT1 			GPIOA
+#define PWM_PORT1 			GPIOB
 #define PWM_PIN1	 		GPIO_Pin_8
-#define PWM_NPIN1	 		GPIO_Pin_13
-
+#define PWM_NPIN1	 		GPIO_Pin_9
+/*
 #define PWM_PORT2 			GPIOB
 #define PWM_PIN2	 		GPIO_Pin_9
 #define PWM_NPIN2	 		GPIO_Pin_14
-
+*/
 
 typedef struct
 {
@@ -32,7 +32,7 @@ typedef struct
 	uint16_t	Filling;
 	uint8_t		sreg;
 
-}PWMType;
+}PWM_t;
 
 
 // **********************************************
@@ -72,15 +72,15 @@ typedef struct
 
 
 
-	PWMType PWM_Unit;
+	PWM_t PWM_Unit;
 
 	void PWM_GPIOHardwareInit(void);
-	void PWM_TimerForPWMHardwareInit(PWMType *PWM_dev);
+	void PWM_TimerForPWMHardwareInit(PWM_t *PWM_dev);
 
 
 #else
 	extern void PWM_HardwareInit(void);
 	extern void PWM_SoftwareInit(void);
-	extern PWMType PWM_Unit;
+	extern PWM_t PWM_Unit;
 
 #endif

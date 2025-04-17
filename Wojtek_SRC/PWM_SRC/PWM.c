@@ -20,7 +20,7 @@ void PWM_HardwareInit(void)
 
 // **************** TIMER INIT FOR LED LAMP *************************
 
-void TimerForPWMHardwareInit(PWMType *PWM_dev)
+void TimerForPWMHardwareInit(PWM_t *PWM_dev)
 {
 
 	uint32_t localSystemClock;
@@ -128,18 +128,18 @@ void PWM_GPIOHardwareInit(void)
 	//*********************  CLOCK ACTIVATION **********************
 
 	PWM_PORT1_RCC_ON;
-	PWM_PORT2_RCC_ON;
+	//PWM_PORT2_RCC_ON;
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
 
 	// ******************** GPIO CONFIGURATION *********************
-	// PWM TIM 1 _ CH 1			PA8			<- no remap
+	// PWM TIM 4 _ CH 1			PA8			<- no remap
 	// PWM TIM 1 _ N CH 1		PB13		<- no remap
 	// PWM TIM 1 _ CH 2			PA9			<- no remap
 	// PWM TIM 1 _ N CH 2		PB14		<- no remap
 	// *************************************************************
 
-	GPIO_InitStruct.GPIO_Pin = PWM_PIN1+PWM_PIN2;
+	GPIO_InitStruct.GPIO_Pin = PWM_PIN1;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
 
 
@@ -148,9 +148,6 @@ void PWM_GPIOHardwareInit(void)
 	#endif
 
 	GPIO_Init(PWM_PORT1, &GPIO_InitStruct);
-
-	GPIO_InitStruct.GPIO_Pin = PWM_NPIN1+PWM_NPIN2;
-	GPIO_Init(PWM_PORT2, &GPIO_InitStruct);
 
 }
 
