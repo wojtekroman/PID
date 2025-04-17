@@ -58,11 +58,7 @@ typedef struct {
 
 uint16_t PowerCheckHardwareInit(PowerCheck_t *Power);
 void PowerCheckADCHardwareInit(ADC_TypeDef *ADCx, uint16_t *Calibration_value);
-void PowerCheckVoltageCoutn (PowerCheck_t *Power);
+void PowerCheckVoltageCount (PowerCheck_t *Power);
 volatile PowerCheck_t PowerSupply;
 #endif
-/*#else
-extern void PowerCheckVoltageCoutn (PowerCheck_t *Power);
-extern PowerCheckVoltageToString (PowerCheck_t *Power, uint8_t *string);
-#endif
-*/
+

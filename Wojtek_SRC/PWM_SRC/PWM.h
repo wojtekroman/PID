@@ -1,4 +1,5 @@
-
+#ifndef PWM_H
+#define PWM_H
 #ifdef STM32F10X_MD
 	#include "stm32f10x_rcc.h"
 	#include "stm32f10x_gpio.h"
@@ -59,7 +60,7 @@ typedef struct
 #endif
 // ******************* define default value for FAN *************************
 
-#ifdef PWM_C
+
 
 
 	#define PWM_PORT1_RCC_ON				RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE)
@@ -76,11 +77,5 @@ typedef struct
 
 	void PWM_GPIOHardwareInit(void);
 	void PWM_TimerForPWMHardwareInit(PWM_t *PWM_dev);
-
-
-#else
-	extern void PWM_HardwareInit(void);
-	extern void PWM_SoftwareInit(void);
-	extern PWM_t PWM_Unit;
 
 #endif

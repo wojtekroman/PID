@@ -1,7 +1,7 @@
-#define IWDG_C
+
 #include "WDG.h"
 
-#undef IWDG_C
+
 
 void IWDG_HardwareInit(void)
 {

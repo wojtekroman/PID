@@ -1,31 +1,19 @@
-#define MAIN_C
+
 
  #include "stm32f10x_gpio.h"
  #include "main.h"
  #include "timers.h"
  #include "LED.h"
- //#include "RS_232.h"
- //#include "CAN_Volvo.h"
-// #include "eeprom.h"
- //#include "OLED.h"
- //#include "DevID.h"
- //#include "ModuleID.h"
- //#include "PowerFail.h"
- //#include "AT24C08.h"
- //#include "Relays.h"
- //#include "WDG.h"
- #include "ADC_Power_chceck.h"
- //#include "ntc4k7.h"
- //#include "HC595.h"
+ #include "ADC_Power_check.h"
  #include "PWM.h"
-#undef MAIN_C
+ #include "WDG.h"
+
 
 
 // ****************** extern variables *****************
-extern volatile PowerCheck_t PowerSupply;
-// *****************************************************
 
-uint8_t FIND_Last_data(void);
+
+// *****************************************************
 
 int main(void)
 {
@@ -68,7 +56,7 @@ int main(void)
 		 	IWDG_Reload();
 	 		TimersMsInterupt();
 	 		TimersSInterupt();
-	 		//TimersHUpdate();
+
 
 	 		StateMachine++;
 

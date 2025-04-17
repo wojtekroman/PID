@@ -1,7 +1,7 @@
-#define ADC_POWER_CHECK_C
-#include "ADC_Power_chceck.h"
 
-#undef ADC_POWER_CHECK_C
+#include "ADC_Power_check.h"
+
+
 
 
 
@@ -59,7 +59,7 @@ void PowerCheckSoftwareInit(PowerCheck_t *Power)
 
 
 
-void PowerCheckVoltageCoutn (PowerCheck_t *Power)
+void PowerCheckVoltageCount (PowerCheck_t *Power)
 {
  uint32_t TempVoltage=0;
  TempVoltage = (uint32_t)((uint32_t)(Power->PowerValue) * (uint32_t)ADC_DELTA_VOLTAGE);

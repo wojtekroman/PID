@@ -1,3 +1,6 @@
+#ifndef WDG_H
+#define WDG_H
+
 #define IWDG_WRITE_ENABLE		0x5555
 #define IWDG_RELOAD_VALUE		0x0FF
 #define IWDG_RELOAD_COMMAND 	0xAAAA
@@ -13,16 +16,11 @@
 #define IWDG_PR_4	 0b000
 
 
-#ifdef IWDG_C
 void IWDG_Start(void);
+
 #ifdef STM32F103C8
-// #include "stm32f10x_rcc.h"
  #include "stm32f10x_iwdg.h"
  #include "stm32f10x_dbgmcu.h"
 #endif
 
-#else
-extern void IWDG_HardwareInit(void);
-extern void IWDG_Reload(void);
-extern void IWDG_Start(void);
 #endif

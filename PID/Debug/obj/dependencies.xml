@@ -53,26 +53,12 @@
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="19644f3931a">
       </source>
-      <source file="..\..\..\Wojtek_SRC\WDG\WDG.h" lastModified="16c56c65430">
+      <source file="..\..\..\Wojtek_SRC\WDG\WDG.h" lastModified="196458951ac">
          <include file="..\..\..\stm_lib\inc\stm32f10x_iwdg.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_dbgmcu.h"/>
       </source>
-      <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.h" lastModified="1964578c51e">
-         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
-         <include file="..\..\..\stm_lib\inc\stm32f10x_adc.h"/>
-         <include file="..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
-         <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
-         <include file="..\..\..\stm_lib\inc\stm32f10x_adc.h"/>
-         <include file="..\..\..\stm_lib\inc\misc.h"/>
-      </source>
       <source file="..\..\..\stm_lib\src\stm32f10x_dbgmcu.c" lastModified="19644f44eea">
          <include file="..\..\..\stm_lib\inc\stm32f10x_dbgmcu.h"/>
-      </source>
-      <source file="..\..\..\Wojtek_SRC\WDG\WDG.c" lastModified="16e45e3d730">
-         <include file="..\..\..\Wojtek_SRC\WDG\WDG.h"/>
-      </source>
-      <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964575d05c">
-         <include file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.h"/>
       </source>
       <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="19644f38a96">
          <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
@@ -84,7 +70,7 @@
          <include file="..\..\..\stm_lib\inc\misc.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_dbgmcu.h"/>
       </source>
-      <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.h" lastModified="19645732f30">
+      <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.h" lastModified="1964587fc75">
          <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_tim.h"/>
@@ -101,6 +87,14 @@
          <include file="..\..\..\stm_lib\inc\stm32f10x_pwr.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
       </source>
+      <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_check.h" lastModified="1964582f6f8">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\stm_lib\inc\stm32f10x_adc.h"/>
+         <include file="..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
+         <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
+         <include file="..\..\..\stm_lib\inc\stm32f10x_adc.h"/>
+         <include file="..\..\..\stm_lib\inc\misc.h"/>
+      </source>
       <source file="..\..\..\Wojtek_SRC\LED\LED.h" lastModified="16c56c663d0">
          <include file="..\..\..\stm_lib\inc\stm32f10x_gpio.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
@@ -113,8 +107,11 @@
          <include file="..\..\..\stm_lib\inc\stm32f10x_adc.h"/>
          <include file="..\..\..\stm_lib\inc\stm32f10x_rcc.h"/>
       </source>
-      <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="19645718bf8">
+      <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="196458888dd">
          <include file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.h"/>
+      </source>
+      <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_check.c" lastModified="1964588418a">
+         <include file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_check.h"/>
       </source>
       <source file="..\..\..\stm_lib\inc\stm32f10x_dbgmcu.h" lastModified="19644f44ec2">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
@@ -130,6 +127,8 @@
       </source>
       <source file="..\..\..\stm_lib\inc\stm32f10x_tim.h" lastModified="19644f3bde5">
          <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\Wojtek_SRC\main.h" lastModified="196457b9996">
       </source>
    </includePath>
    <includePath signature="/I..\..\..\workspace\PID\cmsis_boot /I..\..\..\workspace\PID\Wojtek_SRC\PWM_SRC /I..\..\..\workspace\PID\Wojtek_SRC\LED /I..\..\..\workspace\PID\cmsis /I..\..\..\workspace\PID\Wojtek_SRC\Timers /I..\..\..\workspace\PID\stm_lib\inc /I..\..\..\workspace\PID\Wojtek_SRC /I..\..\..\workspace\PID /I..\..\..\workspace\PID\Wojtek_SRC\ADC_POWER_CHECK /I..\..\..\workspace /I..\..\..\workspace\PID\stm_lib">
