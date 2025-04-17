@@ -1,7 +1,7 @@
-#define ADC_POWER_CHECK_C
-#include "ADC_Power_chceck.h"
-//#include "ntc4k7.h"
-#undef ADC_POWER_CHECK_C
+
+#include "ADC_Power_check.h"
+
+
 
 
 
@@ -35,7 +35,7 @@ void ADC_ClockActive(void)
 // **********************************************************************
 // ****************HARDWARE INIT FOR POWER SUPPLY CHECK *****************
 // **********************************************************************
-uint16_t PowerCheckHardwareInit(PowerCheckType *Power)
+uint16_t PowerCheckHardwareInit(PowerCheck_t *Power)
 {
 	uint16_t calibration=0xFFFF;
 	PowerCheckGPIOHardwareInit();
@@ -49,7 +49,7 @@ uint16_t PowerCheckHardwareInit(PowerCheckType *Power)
 	return calibration;
 }
 
-void PowerCheckSoftwareInit(PowerCheckType *Power)
+void PowerCheckSoftwareInit(PowerCheck_t *Power)
 {
 	Power->ADCx = ADC1;
 	Power->PowerValue=0;
@@ -59,7 +59,7 @@ void PowerCheckSoftwareInit(PowerCheckType *Power)
 
 
 
-void PowerCheckVoltageCoutn (PowerCheckType *Power)
+void PowerCheckVoltageCount (PowerCheck_t *Power)
 {
  uint32_t TempVoltage=0;
  TempVoltage = (uint32_t)((uint32_t)(Power->PowerValue) * (uint32_t)ADC_DELTA_VOLTAGE);
@@ -80,7 +80,7 @@ void PowerCheckVoltageCoutn (PowerCheckType *Power)
  }
 }
 
-void PowerCheckVoltageToString (PowerCheckType *Power, uint8_t *string)
+void PowerCheckVoltageToString (PowerCheck_t *Power, uint8_t *string)
 {
 	uint32_t VoltageGradient =1000000;
 	uint32_t TempVoltage;

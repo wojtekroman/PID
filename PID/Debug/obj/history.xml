@@ -13,8 +13,8 @@
       <target file="stm32f10x_rcc.o" lastModified="19645690461">
          <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="19644f38a96"/>
       </target>
-      <target file="PWM.o" lastModified="1964571946c">
-         <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="19645718bf8"/>
+      <target file="PWM.o" lastModified="19645888cda">
+         <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="196458888dd"/>
       </target>
       <target file="stm32f10x_pwr.o" lastModified="196456902a9">
          <source file="..\..\..\stm_lib\src\stm32f10x_pwr.c" lastModified="19644f3919e"/>
@@ -22,8 +22,8 @@
       <target file="misc.o" lastModified="1964569055f">
          <source file="..\..\..\stm_lib\src\misc.c" lastModified="19644f45b76"/>
       </target>
-      <target file="WDG.o" lastModified="19645696a40">
-         <source file="..\..\..\Wojtek_SRC\WDG\WDG.c" lastModified="16e45e3d730"/>
+      <target file="WDG.o" lastModified="1964589bde4">
+         <source file="..\..\..\Wojtek_SRC\WDG\WDG.c" lastModified="1964589b8c5"/>
       </target>
       <target file="startup_stm32f10x_md.o" lastModified="1964569026d">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="19644f38ab4"/>
@@ -40,8 +40,8 @@
       <target file="syscalls.o" lastModified="19645690529">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="19644f374ca"/>
       </target>
-      <target file="ADC_Power_chceck.o" lastModified="1964569030d">
-         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964551d888"/>
+      <target file="ADC_Power_chceck.o" lastModified="1964578c690">
+         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964575d05c"/>
       </target>
       <target file="stm32f10x_tim.o" lastModified="196456901cd">
          <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="19644f3bdef"/>
@@ -49,8 +49,11 @@
       <target file="stm32f10x_adc.o" lastModified="196456904b1">
          <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="19644f3c2c6"/>
       </target>
-      <target file="main.o" lastModified="196457193a4">
-         <source file="..\..\..\Wojtek_SRC\main.c" lastModified="1964566acde"/>
+      <target file="ADC_Power_check.o" lastModified="19645884a40">
+         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_check.c" lastModified="1964588418a"/>
+      </target>
+      <target file="main.o" lastModified="1964589be2a">
+         <source file="..\..\..\Wojtek_SRC\main.c" lastModified="1964589bccc"/>
       </target>
       <target file="stm32f10x_usart.o" lastModified="196456904f7">
          <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="19644f3cee3"/>

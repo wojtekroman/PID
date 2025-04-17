@@ -1,29 +1,19 @@
-#define MAIN_C
+
 
  #include "stm32f10x_gpio.h"
  #include "main.h"
  #include "timers.h"
  #include "LED.h"
- //#include "RS_232.h"
- //#include "CAN_Volvo.h"
-// #include "eeprom.h"
- //#include "OLED.h"
- //#include "DevID.h"
- //#include "ModuleID.h"
- //#include "PowerFail.h"
- //#include "AT24C08.h"
- //#include "Relays.h"
- //#include "WDG.h"
- //#include "ADC_Power_chceck.h"
- //#include "ntc4k7.h"
- //#include "HC595.h"
+ #include "ADC_Power_check.h"
  #include "PWM.h"
-#undef MAIN_C
+ #include "WDG.h"
 
 
 
+// ****************** extern variables *****************
 
-uint8_t FIND_Last_data(void);
+
+// *****************************************************
 
 int main(void)
 {
@@ -33,7 +23,7 @@ int main(void)
  RSPointer=0;
  static uint8_t StringBuffer[30];
  static uint8_t digit;
- //static WR_CanRxMsg TempCAN;
+
  uint8_t TempString[10];
 
 
@@ -63,10 +53,10 @@ int main(void)
 
 	 	 case TIMERS_STATE:
 	 	 {
-		 	//IWDG_Reload();
+		 	IWDG_Reload();
 	 		TimersMsInterupt();
 	 		TimersSInterupt();
-	 		//TimersHUpdate();
+
 
 	 		StateMachine++;
 
@@ -116,7 +106,7 @@ int main(void)
 	 	 }
 
 
-	 	 case FAN_STATE:
+	 	 case PWM_STATE:
 	 	 {
 	 		 if (Timers_100ms[TIMER_FAN_SPEED_CHANGE] == TIMER_STOP)
 	 		 {
@@ -161,6 +151,7 @@ uint8_t HARDWARE_INIT(void)
 	IWDG_HardwareInit();
 	TIMERS_HARDWARE_INIT();
 	PWM_HardwareInit();
+	PowerCheckHardwareInit(&PowerSupply);
 	return TRUE;
 }
 
@@ -169,7 +160,7 @@ uint8_t SOFTWARE_INIT(void)
 {
 	TIMERS_SOFTWARE_INIT();
 	PWM_SoftwareInit();
-
+	PowerCheckSoftwareInit();
 	return TRUE;
 }
 

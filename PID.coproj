@@ -84,6 +84,7 @@
   </Components>
   <Files>
     <File name="Wojtek_SRC/PWM/PWM.c" path="Wojtek_SRC/PWM_SRC/PWM.c" type="1"/>
+    <File name="Wojtek_SRC/ADC/ADC_Power_check.h" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" type="1"/>
     <File name="Wojtek_SRC/ADC" path="" type="2"/>
     <File name="Wojtek_SRC/WDG/WDG.h" path="Wojtek_SRC/WDG/WDG.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
@@ -103,7 +104,6 @@
     <File name="Wojtek_SRC/PWM" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_adc.c" path="stm_lib/src/stm32f10x_adc.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_iwdg.h" path="stm_lib/inc/stm32f10x_iwdg.h" type="1"/>
-    <File name="Wojtek_SRC/ADC/ADC_Power_chceck.c" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_chceck.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
     <File name="Wojtek_SRC/Main/main.h" path="Wojtek_SRC/main.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_pwr.c" path="stm_lib/src/stm32f10x_pwr.c" type="1"/>
@@ -134,8 +134,8 @@
     <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_rcc.h" path="stm_lib/inc/stm32f10x_rcc.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
+    <File name="Wojtek_SRC/ADC/ADC_Power_check.c" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.c" type="1"/>
     <File name="stm_lib/inc" path="" type="2"/>
     <File name="Wojtek_SRC/LED/LED.c" path="Wojtek_SRC/LED/LED.c" type="1"/>
-    <File name="Wojtek_SRC/ADC/ADC_Power_chceck.h" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_chceck.h" type="1"/>
   </Files>
 </Project>
