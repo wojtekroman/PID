@@ -1,7 +1,7 @@
 //"Data"	0x080038d0
 #include "stm32f10x.h"
 
- static const unsigned char ssd1306_font_5x8[] = {
+ const unsigned char ssd1306_font_5x8[] = {
 
     // *
     // * code=0, hex=0x00, ascii="^@"

@@ -59,6 +59,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-/PID/Debug
-/PID/PID.elf.xcodeproj
 >>>>>>> 212bc8a1ed4d1fcd38648c1d734b842f403278e8

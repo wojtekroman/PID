@@ -55,6 +55,8 @@
  } SSD1306_COLOR_t;
 
  #define FONT_11X18	//FONT_11X18//FONT_5X8//
+ //#define FONT_5X8
+ //#define FONT_7X10
 
  #ifdef FONT_11X18
 
@@ -70,7 +72,9 @@
 
  #ifdef FONT_7X10
  // #include "ssd1306_font_7_10.h"
-  extern static const uint16_t FONT_7x10_DATA[];
+  extern const uint16_t FONT_7x10_DATA[];
+  #define FONT_WIDTH	7
+  #define FONT_HIGH 	10
  #endif
 
  #ifdef STM32F103C8
@@ -82,7 +86,7 @@
 
  #ifdef FONT_5X8
   //#include "ssd1306_font_5x8.h"
-  extern static const unsigned char ssd1306_font_5x8[];
+  extern const unsigned char ssd1306_font_5x8[];
   #define FONT_WIDTH	5
   #define FONT_HIGH 	8
   #define CHAR_MASK	0xFF
