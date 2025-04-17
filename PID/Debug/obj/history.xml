@@ -13,7 +13,7 @@
       <target file="stm32f10x_rcc.o" lastModified="19645690461">
          <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="19644f38a96"/>
       </target>
-      <target file="PWM.o" lastModified="1964571946c">
+      <target file="PWM.o" lastModified="19645733373">
          <source file="..\..\..\Wojtek_SRC\PWM_SRC\PWM.c" lastModified="19645718bf8"/>
       </target>
       <target file="stm32f10x_pwr.o" lastModified="196456902a9">
@@ -40,8 +40,8 @@
       <target file="syscalls.o" lastModified="19645690529">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="19644f374ca"/>
       </target>
-      <target file="ADC_Power_chceck.o" lastModified="1964569030d">
-         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964551d888"/>
+      <target file="ADC_Power_chceck.o" lastModified="1964578c690">
+         <source file="..\..\..\Wojtek_SRC\ADC_POWER_CHECK\ADC_Power_chceck.c" lastModified="1964575d05c"/>
       </target>
       <target file="stm32f10x_tim.o" lastModified="196456901cd">
          <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="19644f3bdef"/>
@@ -49,8 +49,8 @@
       <target file="stm32f10x_adc.o" lastModified="196456904b1">
          <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="19644f3c2c6"/>
       </target>
-      <target file="main.o" lastModified="196457193a4">
-         <source file="..\..\..\Wojtek_SRC\main.c" lastModified="1964566acde"/>
+      <target file="main.o" lastModified="196457b5041">
+         <source file="..\..\..\Wojtek_SRC\main.c" lastModified="196457a4dd1"/>
       </target>
       <target file="stm32f10x_usart.o" lastModified="196456904f7">
          <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="19644f3cee3"/>

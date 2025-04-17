@@ -1,4 +1,6 @@
 // *************** MAIN.H  ****************************
+#ifndef MANI_H
+#define MAIN_H
 
 #define TRUE	1
 #define FALSE 	~TRUE
@@ -14,7 +16,7 @@
 
 
 
-#ifdef MAIN_C
+
 
 enum {
 
@@ -27,7 +29,7 @@ enum {
 	CAN_SEND_STATE,
 	LED_STATE,
 	POWER_SUPLY_CHECK_STATE,
-	FAN_STATE,
+	PWM_STATE,
 	TEMPERATURE_CHECK_STATE,
 
 	POWER_STATUS
@@ -37,19 +39,11 @@ enum {
 
 };
 
-/*
-struct {
-
-}Luggage;
-*/
 #define TIMER_TEMPERATURE_DISPLAY_VALUE				5
 #define TIMER_POWER_VOLTAGE_DISPLAY_DELAY_100ms		5
-uint32_t	CAN_DEV_ID;
-//#include "eeprom.h"
-//uint16_t VirtAddVarTab[NumbOfVar] = {0x1234};
 
 uint8_t HARDWARE_INIT(void);
 uint8_t SOFTWARE_INIT(void);
-#else
+
 
 #endif

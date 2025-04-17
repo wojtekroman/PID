@@ -19,11 +19,11 @@
 #define PWM_PORT1 			GPIOB
 #define PWM_PIN1	 		GPIO_Pin_8
 #define PWM_NPIN1	 		GPIO_Pin_9
-/*
+
 #define PWM_PORT2 			GPIOB
 #define PWM_PIN2	 		GPIO_Pin_9
 #define PWM_NPIN2	 		GPIO_Pin_14
-*/
+
 
 typedef struct
 {

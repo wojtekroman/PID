@@ -1,3 +1,5 @@
+#ifndef ADC_POWER_CHECK_H
+#define ADC_POWER_CHECK_H
 
 #ifdef STM32F103C8
 #include  "stm32f10x.h"
@@ -16,7 +18,7 @@ typedef struct {
 	ADC_TypeDef *ADCx;
 	uint32_t Voltage;
 
-}PowerCheckType;
+}PowerCheck_t;
 
 #define ADC_NO_DATA	0xFFFF
 #define ADC_TIMEOUT_VALUE	0xFFFF
@@ -25,7 +27,7 @@ typedef struct {
 #define ADC_POINT_POSITION	10000
 #define POWER_FAIL_BORDER	(ADC_POINT_POSITION*2)
 
-#ifdef ADC_POWER_CHECK_C
+
 
 #ifdef STM32F103C8
 #include "stm32f10x_gpio.h"
@@ -54,13 +56,13 @@ typedef struct {
 
 	#define PowerCheckADCChanel			ADC_Channel_3
 
-uint16_t PowerCheckHardwareInit(PowerCheckType *Power);
+uint16_t PowerCheckHardwareInit(PowerCheck_t *Power);
 void PowerCheckADCHardwareInit(ADC_TypeDef *ADCx, uint16_t *Calibration_value);
-void PowerCheckVoltageCoutn (PowerCheckType *Power);
-volatile PowerCheckType PowerSupply;
-#else
-extern volatile PowerCheckType PowerSupply;
-extern void PowerCheckVoltageCoutn (PowerCheckType *Power);
-extern PowerCheckVoltageToString (PowerCheckType *Power, uint8_t *string);
+void PowerCheckVoltageCoutn (PowerCheck_t *Power);
+volatile PowerCheck_t PowerSupply;
 #endif
-
+/*#else
+extern void PowerCheckVoltageCoutn (PowerCheck_t *Power);
+extern PowerCheckVoltageToString (PowerCheck_t *Power, uint8_t *string);
+#endif
+*/
