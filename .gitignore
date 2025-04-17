@@ -4,8 +4,8 @@
 #datasheets
 Datasheet/
 # pliki wynikowe kompilacji
-module_ID/Debug
-module_ID/module_ID.elf.xcodeproj
+PID/Debug
+PID/PID.elf.xcodeproj
 =======
 # Prerequisites
 *.d

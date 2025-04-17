@@ -7,7 +7,7 @@
  #include "ADC_Power_check.h"
  #include "PWM.h"
  #include "WDG.h"
-
+ #include "OLED.h"
 
 
 // ****************** extern variables *****************
@@ -152,6 +152,7 @@ uint8_t HARDWARE_INIT(void)
 	TIMERS_HARDWARE_INIT();
 	PWM_HardwareInit();
 	PowerCheckHardwareInit(&PowerSupply);
+	OLEDDisplayInit(&LCD_OLED);
 	return TRUE;
 }
 
