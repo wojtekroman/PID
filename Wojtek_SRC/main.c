@@ -123,7 +123,7 @@ int main(void)
 	 		 {
 
 
-	 			PWM_Unit.TIMx->CCR3 =(uint16_t)PWM_SET_FREQ(PWM_Unit.Filling);
+	 			PWM_Unit.TIMx->CCR1 =(uint16_t)PWM_SET_FREQ(PWM_Unit.Fulfillment);
 	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] = 1; //PWM_Unit.FanSpeedChangeDelayValue;
 	 		 }
 	 		 StateMachine++;
@@ -188,11 +188,12 @@ uint8_t SOFTWARE_INIT(void)
 	if (!SWInitStatus)
 	{
 		TIMERS_SOFTWARE_INIT();
-		PWM_SoftwareInit();
 		PowerCheckSoftwareInit(&PowerSupply);
 		OLEDSoftwareInit(&LCD_OLED);
 		SWInitStatus=1;
 	}
 	return SWInitStatus;
 }
+///
+
 

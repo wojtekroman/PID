@@ -14,15 +14,15 @@
 	#define PWM_SET_FREQ(freq)		((SystemCoreClock/freq)-1)
 
 
-	#define PWM_TIMER			TIM4
+	#define PWM_TIMER			TIM1
 
 
 #define PWM_PORT1 			GPIOB
-#define PWM_PIN1	 		GPIO_Pin_8
-#define PWM_NPIN1	 		GPIO_Pin_9
+#define PWM_PIN1	 		GPIO_Pin_13			// PB13 - CN3
+#define PWM_NPIN1	 		GPIO_Pin_13			// PA9 - ch4
 
-#define PWM_PORT2 			GPIOB
-#define PWM_PIN2	 		GPIO_Pin_9
+#define PWM_PORT2 			GPIOA
+#define PWM_PIN2	 		GPIO_Pin_8
 #define PWM_NPIN2	 		GPIO_Pin_14
 
 
@@ -30,7 +30,7 @@ typedef struct
 {
 	TIM_TypeDef* TIMx;
 	uint16_t	Freq;
-	uint16_t	Filling;
+	uint16_t	Fulfillment;
 	uint8_t		sreg;
 
 }PWM_t;
@@ -43,7 +43,7 @@ typedef struct
 
 
 //	**************** end sreg definition ************
-#define GET_INT_FOR_FILLING(MAX, PERC)		((uint16_t)((uint64_t)MAX -	((uint64_t)MAX * (uint64_t)PERC) / 1000))
+#define GET_INT_FOR_FULFILLMENT(MAX, PERC)		((uint16_t)((uint64_t)MAX -	((uint64_t)MAX * (uint64_t)PERC) / 1000))
 
 
 
@@ -63,8 +63,8 @@ typedef struct
 
 
 
-	#define PWM_PORT1_RCC_ON				RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE)
-	#define PWM_PORT2_RCC_ON				RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE)
+	#define PWM_PORT1_RCC_ON				RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE)
+	#define PWM_PORT2_RCC_ON				RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE)
 
 
 	#define PWM_DEF_INTENSIVITY			(FAN_DEF_FREQ/2)			// RANGE FROM 0 UP TO 1000
@@ -77,5 +77,6 @@ typedef struct
 
 	void PWM_GPIOHardwareInit(void);
 	void PWM_TimerForPWMHardwareInit(PWM_t *PWM_dev);
+	void PWM_FillerUpdate (PWM_t *PWM_dev);
 
 #endif
