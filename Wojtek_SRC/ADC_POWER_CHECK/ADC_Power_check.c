@@ -63,20 +63,11 @@ void PowerCheckVoltageCount (PowerCheck_t *Power)
 {
  uint32_t TempVoltage=0;
  TempVoltage = (uint32_t)((uint32_t)(Power->PowerValue) * (uint32_t)ADC_DELTA_VOLTAGE);
- TempVoltage= TempVoltage+ (TempVoltage/10);
- if (Power->Voltage > TempVoltage ? Power->Voltage - TempVoltage > ADC_FILTER_VALUE : TempVoltage - Power->Voltage  > ADC_FILTER_VALUE)
+ TempVoltage/=10;//TempVoltage= TempVoltage + (TempVoltage/10);
+ if (Power->Voltage >= TempVoltage ? Power->Voltage - TempVoltage > ADC_FILTER_VALUE : TempVoltage - Power->Voltage  > ADC_FILTER_VALUE)
  {
-	 if (Power->Voltage > TempVoltage ? Power->Voltage - TempVoltage > ADC_POINT_POSITION : TempVoltage - Power->Voltage  > ADC_POINT_POSITION )
-	 {
-		 Power->Voltage = TempVoltage;
-	 }
-	 else
-	 {
-		  Power->Voltage += TempVoltage;
-		  Power->Voltage /= 2;
-		//  Power->Voltage += (Power->Voltage / 10);	// Voltage correction
-	 }
-	 Power->sreg |= POWER_NEW_VOLTAGE;
+	Power->Voltage = TempVoltage;
+	Power->sreg |= POWER_NEW_VOLTAGE;
  }
 }
 
@@ -133,7 +124,7 @@ void PowerCheckGPIOHardwareInit(void)
 
 	SUPPLY_CHECK_RCC_ACTIVE;
 	GPIOInitStructure.GPIO_Speed =GPIO_Speed_2MHz;
-	GPIOInitStructure.GPIO_Pin = SUPPLY_CHECK_PIN;			//GPIO_Pin_3;
+	GPIOInitStructure.GPIO_Pin = SUPPLY_CHECK_PIN;			//GPIO_Pin_0;
 	GPIOInitStructure.GPIO_Mode = GPIO_Mode_AIN;
 	GPIO_Init(SUPPLY_CHECK_PORT, &GPIOInitStructure);		// GPIOA
 
@@ -184,7 +175,7 @@ void PowerCheckADCHardwareInit(ADC_TypeDef *ADCx, uint16_t *Calibration_value)
 	 // *************** ADC chanell configuration ****************************
 
 
-	 ADC_RegularChannelConfig(ADCx, PowerCheckADCChanel,1, ADC_SampleTime_239Cycles5);
+	 ADC_RegularChannelConfig(ADCx, PowerCheckADCChanel,1, ADC_SampleTime_28Cycles5);
 
 	  // **************** ADC interrupt ***********************
 
@@ -251,6 +242,7 @@ uint32_t test32_t;
 	{
 
 		PowerSupply.PowerValue = PowerSupply.ADCx->DR;
+		PowerSupply.sreg |= POWER_NEW_VOLTAGE;
 		PowerSupply.ADCx->SR = (uint32_t)(ADC_FLAG_EOC ) ;
 	}
 

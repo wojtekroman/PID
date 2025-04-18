@@ -664,6 +664,7 @@ void OLEDDisplayInit(OLEDType *LCD)
 
 	i=0;
 
+
 }
 
 void OLEDDisplayCleare(OLEDType *LCD)

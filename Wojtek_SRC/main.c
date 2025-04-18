@@ -8,7 +8,7 @@
  #include "PWM.h"
  #include "WDG.h"
  #include "OLED.h"
-
+ #include"DataConversion.h"
 
 // ****************** extern variables *****************
 
@@ -32,6 +32,15 @@ int main(void)
  {
 	 switch (StateMachine)
 	  {
+ 	 	 case SOFTWARE_INIT_STATE:
+ 	 	 {
+ 		 	 if (SOFTWARE_INIT())
+ 		 	 {
+ 			 	 StateMachine++;
+ 		 	 }
+ 		 	 break;
+ 	 	 }
+
 	 	 case HARDWARE_INIT_STATE:
 	 	 {
 
@@ -42,14 +51,7 @@ int main(void)
 	 		 break;
 	 	 }
 
-	 	 case SOFTWARE_INIT_STATE:
-	 	 {
-	 		 if (SOFTWARE_INIT())
-	 		 {
-	 			 StateMachine++;
-	 		 }
-	 		 break;
-	 	 }
+
 
 	 	 case TIMERS_STATE:
 	 	 {
@@ -100,7 +102,12 @@ int main(void)
 
 	 	 case POWER_SUPLY_CHECK_STATE:
 	 	 {
+	 		 if (PowerSupply.sreg & POWER_NEW_VOLTAGE)
+	 		 	 {
+	 			 	 PowerCheckVoltageCount(&PowerSupply);
+	 			 	 PowerSupply.sreg &= ~POWER_NEW_VOLTAGE;
 
+	 		 	 }
 	 		 StateMachine++;
 			 break;
 	 	 }
@@ -123,11 +130,23 @@ int main(void)
 
 	 		 break;
 	 	 }
+	 	 case LCD_STATE:
+	 	 {
+
+	 		if (LCD_OLED.sreg & OLED_REFRESH)
+	 			{
+	 				INT_dec_2STR(PowerSupply.Voltage, TempString);
+	 				OLEDWriteText(&LCD_OLED, TempString);
+	 				LCD_OLED.sreg &= ~OLED_REFRESH;
+	 			}
+	 		StateMachine++;
+	 		break;
+	 	 }
 
 	 	 default:
 	 	 {
 
-	 		 StateMachine = TIMERS_STATE;
+	 		 StateMachine = SOFTWARE_INIT_STATE;
 
 	 	 }
 	  }	//  switch (StateMachine)
@@ -145,23 +164,35 @@ return 0;
 
 uint8_t HARDWARE_INIT(void)
 {
+	static uint8_t HWInitStatus=0;
+	if (!HWInitStatus)
+	{
+		LED_HARDWARE_INIT();
+		IWDG_HardwareInit();
+		TIMERS_HARDWARE_INIT();
+		PWM_HardwareInit();
+		PowerCheckHardwareInit(&PowerSupply);
+		OLEDHardwareInit();
+		OLEDDisplayInit(&LCD_OLED);
+		OLEDDisplayCleare(&LCD_OLED);
+		HWInitStatus=1;
+	}
 
-
-	LED_HARDWARE_INIT();
-	IWDG_HardwareInit();
-	TIMERS_HARDWARE_INIT();
-	PWM_HardwareInit();
-	PowerCheckHardwareInit(&PowerSupply);
-	OLEDDisplayInit(&LCD_OLED);
-	return TRUE;
+	return HWInitStatus;
 }
 
 // ************* SOFTWARE FUNCTION INITIALIZATION **********************
 uint8_t SOFTWARE_INIT(void)
 {
-	TIMERS_SOFTWARE_INIT();
-	PWM_SoftwareInit();
-	PowerCheckSoftwareInit();
-	return TRUE;
+	static uint8_t SWInitStatus=0;
+	if (!SWInitStatus)
+	{
+		TIMERS_SOFTWARE_INIT();
+		PWM_SoftwareInit();
+		PowerCheckSoftwareInit(&PowerSupply);
+		OLEDSoftwareInit(&LCD_OLED);
+		SWInitStatus=1;
+	}
+	return SWInitStatus;
 }
 

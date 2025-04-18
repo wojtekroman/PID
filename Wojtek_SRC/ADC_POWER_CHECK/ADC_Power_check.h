@@ -24,8 +24,8 @@ typedef struct {
 #define ADC_TIMEOUT_VALUE	0xFFFF
 // *************** SREG bits **********************
 #define POWER_NEW_VOLTAGE	0x01
-#define ADC_POINT_POSITION	10000
-#define POWER_FAIL_BORDER	(ADC_POINT_POSITION*2)
+#define ADC_POINT_POSITION	1500
+#define POWER_FAIL_BORDER	(ADC_POINT_POSITION/2)		// input has a V divider
 
 
 
@@ -41,20 +41,38 @@ typedef struct {
 	#define ADC_MAX_VALIE		4096
 	#define ADC_DELTA_VOLTAGE	((ADC_REF_VOLTAGE/ADC_MAX_VALIE)*10)
 
-	#define ADC_FILTER_VALUE	800
-
-
+	#define ADC_FILTER_VALUE	100
 
 	#define ADC_TIME_OUT				0xFFFF
 	#define CFGR_ADCPRE_Reset_Mask    ((uint32_t)0xFFFF3FFF)
 
-	#define SUPPLY_CHECK_PIN			GPIO_Pin_0
-	#define SUPPLY_CHECK_PORT			GPIOA			// Power --- 1MOhm ---- A3 -----100k ---GND
+	#define SUPPLY_CHECK_PIN			GPIO_Pin_0		// Power --- 21kMOhm ---- A0 -----21k ---GND
+	#define SUPPLY_CHECK_PORT			GPIOA
 
 	#define SUPPLY_CHECK_CLOCK			RCC_APB2Periph_GPIOA
 	#define SUPPLY_CHECK_RCC_ACTIVE		RCC_APB2PeriphClockCmd(SUPPLY_CHECK_CLOCK, ENABLE)
 
-	#define PowerCheckADCChanel			ADC_Channel_3
+	#define PowerCheckADCChanel			ADC_Channel_0
+
+
+	/*#if SUPPLY_CHECK_PIN == GPIO_Pin_0					error (GPIO_Pin_0 is (uint16_t) 0x00001 #if don't understand it
+		#define PowerCheckADCChanel			ADC_Channel_0
+
+	#elif SUPPLY_CHECK_PIN == GPIO_Pin_1
+		#define PowerCheckADCChanel			ADC_Channel_1
+
+	#elif SUPPLY_CHECK_PIN == GPIO_Pin_2
+		#define PowerCheckADCChanel			ADC_Channel_2
+
+	#elif SUPPLY_CHECK_PIN == GPIO_Pin_3
+		#define PowerCheckADCChanel			ADC_Channel_3
+
+	#elif SUPPLY_CHECK_PIN == GPIO_Pin_4
+		#define PowerCheckADCChanel			ADC_Channel_4
+	#endif
+*/
+
+
 
 uint16_t PowerCheckHardwareInit(PowerCheck_t *Power);
 void PowerCheckADCHardwareInit(ADC_TypeDef *ADCx, uint16_t *Calibration_value);

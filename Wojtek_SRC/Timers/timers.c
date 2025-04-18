@@ -4,7 +4,7 @@
  */
 
 
-#define TIMERS_C
+
 #ifdef STM32F030F4P6
 #include "stm32f0xx_gpio.h"
 
@@ -16,8 +16,6 @@
 #endif
 
 #include "timers.h"
-
-#undef TIMERS_C
 
 /*
  * 		HARDWARE INIT FOR TIMERS
@@ -38,11 +36,11 @@ uint32_t localSystemClock;
 #ifdef STM32F103C8
 	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_DBGMCU, ENABLE);
 //	DBGMCU->CR |= (uint32_t)(DBGMCU_TIM3_STOP);
-	DBGMCU->CR |= (uint32_t)(DBGMCU_TIM4_STOP);
+	DBGMCU->CR |= (uint32_t)(DBGMCU_TIM3_STOP);
 
 #endif
 
-	if ((RCC->CFGR & RCC_CFGR_PPRE1_DIV2) && (uC_TIMER_100ms == TIM4))
+	if ((RCC->CFGR & RCC_CFGR_PPRE1_DIV2) && (uC_TIMER_100ms == TIM3))
 	{
 		localSystemClock = SystemCoreClock / 2;			// Peripheria in APB1 have system clock / 2 (see user manual page 125)  in system_stm32F10x.c line 1028 RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
 
@@ -52,7 +50,7 @@ uint32_t localSystemClock;
 
 	/* timer switch ON */
 	//RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM17, ENABLE);
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 	//SystemCoreClock
 	/* 1ms == 48000 */
 	TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((localSystemClock / 1000)-1 );	// 1000 => 1ms
@@ -70,7 +68,7 @@ uint32_t localSystemClock;
  	NVIC_InitStruct.NVIC_IRQChannel =  TIM17_IRQn ;
     NVIC_InitStruct.NVIC_IRQChannelPriority = 0;
 #endif
-    NVIC_InitStruct.NVIC_IRQChannel =  TIM4_IRQn ;
+    NVIC_InitStruct.NVIC_IRQChannel =  TIM3_IRQn ;
     NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStruct);
 
@@ -254,7 +252,7 @@ void TimersHUpdate(void)
 // ****************** Interupts form timer 17 ***************************
 
 //void TIM17_IRQHandler(void)
-void TIM4_IRQHandler(void)
+void TIM3_IRQHandler(void)
 
 {
 

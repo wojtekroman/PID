@@ -88,31 +88,33 @@
     <File name="Wojtek_SRC/ADC/ADC_Power_check.h" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" type="1"/>
     <File name="Wojtek_SRC/ADC" path="" type="2"/>
     <File name="Wojtek_SRC/WDG/WDG.h" path="Wojtek_SRC/WDG/WDG.h" type="1"/>
+    <File name="Wojtek_SRC/DataConvert/DataConversion.c" path="Wojtek_SRC/DataConversion/DataConversion.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_dbgmcu.c" path="stm_lib/src/stm32f10x_dbgmcu.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
-    <File name="stm_lib/inc/stm32f10x_pwr.h" path="stm_lib/inc/stm32f10x_pwr.h" type="1"/>
+    <File name="Wojtek_SRC/DataConvert" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_tim.c" path="stm_lib/src/stm32f10x_tim.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_pwr.h" path="stm_lib/inc/stm32f10x_pwr.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="stm_lib/src/misc.c" path="stm_lib/src/misc.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_iwdg.c" path="stm_lib/src/stm32f10x_iwdg.c" type="1"/>
-    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
     <File name="Wojtek_SRC" path="" type="2"/>
+    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_dbgmcu.h" path="stm_lib/inc/stm32f10x_dbgmcu.h" type="1"/>
     <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
     <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="Wojtek_SRC/PWM" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_adc.c" path="stm_lib/src/stm32f10x_adc.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_iwdg.h" path="stm_lib/inc/stm32f10x_iwdg.h" type="1"/>
-    <File name="Wojtek_SRC/SSD1306" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
+    <File name="Wojtek_SRC/SSD1306" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_pwr.c" path="stm_lib/src/stm32f10x_pwr.c" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
     <File name="Wojtek_SRC/Main/main.h" path="Wojtek_SRC/main.h" type="1"/>
     <File name="Wojtek_SRC/Timers/timers.h" path="Wojtek_SRC/Timers/timers.h" type="1"/>
-    <File name="Wojtek_SRC/WDG" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
+    <File name="Wojtek_SRC/WDG" path="" type="2"/>
     <File name="stm_lib/inc/stm32f10x_gpio.h" path="stm_lib/inc/stm32f10x_gpio.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
     <File name="Wojtek_SRC/Timers" path="" type="2"/>
@@ -136,8 +138,9 @@
     <File name="stm_lib" path="" type="2"/>
     <File name="stm_lib/inc/stm32f10x_adc.h" path="stm_lib/inc/stm32f10x_adc.h" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
-    <File name="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" path="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" type="1"/>
+    <File name="Wojtek_SRC/DataConvert/DataConversion.h" path="Wojtek_SRC/DataConversion/DataConversion.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_rcc.h" path="stm_lib/inc/stm32f10x_rcc.h" type="1"/>
+    <File name="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" path="Wojtek_SRC/SSD1306/ssd1306_font_5x8.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_i2c.h" path="stm_lib/inc/stm32f10x_i2c.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
     <File name="Wojtek_SRC/ADC/ADC_Power_check.c" path="Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.c" type="1"/>
