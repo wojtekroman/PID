@@ -11,7 +11,7 @@
 	#define PWM_NEW_VALUE			0x01
 	#define	PWM_DEF_FREQ			SystemCoreClock
 	#define PWM_TOTAL_MAX_SPEED		72000000
-	#define PWM_SET_FREQ(freq)		((SystemCoreClock/freq)-1)
+	#define PWM_SET_FREQ(freq)		freq<=0 ? 1 : ((SystemCoreClock/freq)-1)
 
 
 	#define PWM_TIMER			TIM1

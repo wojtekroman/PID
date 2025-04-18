@@ -109,7 +109,7 @@ void TimerForPWMHardwareInit(PWM_t *PWM_dev)
 	 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
 	 	TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;
-	 	TIM_OCInitStructure.TIM_Pulse = (uint16_t)(PWM_dev->Filling);
+	 	TIM_OCInitStructure.TIM_Pulse = (uint16_t)(PWM_dev->Fulfillment);
 	 	TIM_OC1Init(PWM_dev->TIMx, &TIM_OCInitStructure);
 		TIM_OC1PreloadConfig(PWM_dev->TIMx, TIM_OCPreload_Enable);
 		//TIM_OC2Init(PWM_dev->TIMx, &TIM_OCInitStructure);
@@ -197,8 +197,8 @@ void PWM_SoftwareInit(void)
 {
 	PWM_Unit.sreg = PWM_DEF_SREG;
 	PWM_Unit.TIMx = PWM_TIMER;
-	PWM_Unit.Freq = PWM_SET_FREQ(1000);
-	PWM_Unit.Fulfillment = PWM_Unit.Freq/10;			//przy Fill rownym 0x00000193f jest prawie max napiecie = 6450
+	PWM_Unit.Freq = PWM_SET_FREQ(10000);
+	PWM_Unit.Fulfillment = PWM_Unit.Freq/1000;			//przy Fill rownym 0x00000193f jest prawie max napiecie = 6450
 
 
 }

@@ -17,6 +17,7 @@ typedef struct {
 	uint16_t ADC_Calibration;
 	ADC_TypeDef *ADCx;
 	uint32_t Voltage;
+	uint32_t MAX_Voltage;
 
 }PowerCheck_t;
 
@@ -39,9 +40,10 @@ typedef struct {
 
 	#define ADC_REF_VOLTAGE		33000
 	#define ADC_MAX_VALIE		4096
-	#define ADC_DELTA_VOLTAGE	((ADC_REF_VOLTAGE/ADC_MAX_VALIE)*10)
+	#define ADC_DELTA_VOLTAGE	((ADC_REF_VOLTAGE/ADC_MAX_VALIE))
 
 	#define ADC_FILTER_VALUE	100
+	#define MAX_VOLTAGE			ADC_REF_VOLTAGE			// Remember about voltage devider
 
 	#define ADC_TIME_OUT				0xFFFF
 	#define CFGR_ADCPRE_Reset_Mask    ((uint32_t)0xFFFF3FFF)

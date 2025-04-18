@@ -55,6 +55,7 @@ void PowerCheckSoftwareInit(PowerCheck_t *Power)
 	Power->PowerValue=0;
 	Power->ADC_Calibration=ADC_NO_DATA;
 	Power->Voltage = 0;
+	Power->MAX_Voltage = MAX_VOLTAGE;
 }
 
 
@@ -63,7 +64,8 @@ void PowerCheckVoltageCount (PowerCheck_t *Power)
 {
  uint32_t TempVoltage=0;
  TempVoltage = (uint32_t)((uint32_t)(Power->PowerValue) * (uint32_t)ADC_DELTA_VOLTAGE);
- TempVoltage/=10;//TempVoltage= TempVoltage + (TempVoltage/10);
+ TempVoltage *=2; // due to voltage divider at ADC input.
+ //TempVoltage/=10;//TempVoltage= TempVoltage + (TempVoltage/10);
  if (Power->Voltage >= TempVoltage ? Power->Voltage - TempVoltage > ADC_FILTER_VALUE : TempVoltage - Power->Voltage  > ADC_FILTER_VALUE)
  {
 	Power->Voltage = TempVoltage;
