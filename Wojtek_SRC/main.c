@@ -24,11 +24,11 @@ int main(void)
  RSPointer=0;
  static uint8_t StringBuffer[30];
  static uint8_t digit;
-
+ int i=0;
  uint8_t TempString[10];
  PID_Controller pid_capacitor;
  uint16_t temp_16=0;
-
+ pid_capacitor.sreg |= PID_INIT;
  while(1)
  {
 	 switch (StateMachine)
@@ -106,7 +106,6 @@ int main(void)
 	 		 if (PowerSupply.sreg & POWER_NEW_VOLTAGE)
 	 		 	 {
 	 			 	 PowerCheckVoltageCount(&PowerSupply);
-	 			 	 PowerSupply.Voltage /=10;
 	 			 	 PowerSupply.sreg &= ~POWER_NEW_VOLTAGE;
 
 	 		 	 }
@@ -117,13 +116,12 @@ int main(void)
 	 	 {
 	 		if (pid_capacitor.sreg & PID_INIT)
 
-	 			{					//			Kp   		Ki  		Kd			d1 [s]		min			max				target
-	 				PID_Init(&pid_capacitor, (float)1.0, (float)0.1, (float)0.04, (float)0.1, (float)1.0, (float)1000.0, (float)2000.0);		// min to 0.1 % of PWM, max is 100%
+	 			{					//		Kp   Ki  Kd	 dt	min	max  	target
+	 				PID_Init(&pid_capacitor, 300, 10, 4, 10, 1, 10000, 2000);		// Kx *100 dt in ms target in mV
 					pid_capacitor.sreg &= ~PID_INIT;
 	 			}
 
-	 		temp_16 = (uint16_t)PID_Compute(&pid_capacitor, pid_capacitor.target, PowerSupply.Voltage);
-	 		PWM_Unit.Fulfillment= (uint16_t)(pid_capacitor.output_max / (float)PWM_Unit.Freq * (float)temp_16);
+
 
 
 	 		 StateMachine++;
@@ -139,8 +137,9 @@ int main(void)
 	 		 if (!Timers_100ms[TIMER_FAN_SPEED_CHANGE]  )
 	 		 {
 
-
-	 			PWM_Unit.TIMx->CCR1 =(uint16_t)PWM_SET_FREQ(PWM_Unit.Fulfillment);
+	 	 		temp_16 = (uint16_t)PID_Compute(&pid_capacitor, pid_capacitor.target, (uint16_t)PowerSupply.Voltage);
+	 	 		PWM_Unit.Fulfillment= (uint16_t)(((uint32_t)PWM_Unit.Freq * (uint32_t)temp_16)/(pid_capacitor.output_max));
+	 	 		PWM_Unit.TIMx->CCR1 =(uint16_t)PWM_Unit.Fulfillment;
 	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] = 1; //PWM_Unit.FanSpeedChangeDelayValue;
 	 		 }
 	 		 StateMachine++;
@@ -153,8 +152,12 @@ int main(void)
 	 		if (LCD_OLED.sreg & OLED_REFRESH)
 	 			{
 	 				INT_dec_2STR(PowerSupply.Voltage, TempString);
-	 				OLEDWriteText(&LCD_OLED, TempString);
-	 				LCD_OLED.sreg &= ~OLED_REFRESH;
+	 				for (i =0; i<4; i++)
+	 				{
+	 					OLEDBuferPutChar(&LCD_OLED, (i*8), 0, (TempString+i));
+	 				}
+	 				//OLEDWriteText(&LCD_OLED, TempString);
+
 	 			}
 	 		StateMachine++;
 	 		break;
@@ -207,7 +210,6 @@ uint8_t SOFTWARE_INIT(void)
 		TIMERS_SOFTWARE_INIT();
 		PowerCheckSoftwareInit(&PowerSupply);
 		OLEDSoftwareInit(&LCD_OLED);
-
 		SWInitStatus=1;
 	}
 	return SWInitStatus;
