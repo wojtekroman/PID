@@ -10,8 +10,9 @@
  #include "OLED.h"
  #include "DataConversion.h"
  #include "PID.h"
+ #include "USART.h"
 
-// ****************** extern variables *****************
+// ****************** global variables *****************
 
 
 // *****************************************************
@@ -26,9 +27,10 @@ int main(void)
  static uint8_t digit;
  int i=0;
  uint8_t TempString[10];
- PID_Controller pid_capacitor;
+
+
  uint16_t temp_16=0;
- pid_capacitor.sreg |= PID_INIT;
+ //pid_capacitor.sreg |= PID_INIT;
  while(1)
  {
 	 switch (StateMachine)
@@ -68,16 +70,36 @@ int main(void)
 
 
 
-	 	 case CAN_READ_STATE:
+	 	 case USART_READ_STATE:
 	 	 {
+	 		 if ((PID_Usart.RxBuffer[PID_Usart.RxCounter-1] == 0x0a) || (PID_Usart.RxBuffer[PID_Usart.RxCounter-1] == 0x0d ))
+	 		 {
+	 			if(PID_Usart.RxBuffer[0]=='T')
+	 			{
+	 				i=0;
+	 				do{
+	 					TempString[i]= PID_Usart.RxBuffer[2+i];
+	 					i++;
+	 				}while (PID_Usart.RxBuffer[2+i]>=0x30 && PID_Usart.RxBuffer[2+i]<=0x39);				// while digits are in the buffer
 
+	 				TempString[i]=0;
+	 				pid_capacitor.target = (uint16_t) STRING_TO_DEC_(TempString);
+	 				pid_capacitor.sreg |= PID_RESET;
+	 				PID_TargetInit(&pid_capacitor, pid_capacitor.target);
+	 				PID_Usart.RxBuffer[0]=0;
+	 				PID_Usart.RxCounter=0;
+	 			}
+	 		 }
 	 		StateMachine++;
 	 		break;
 	 	 }
 
-	 	 case CAN_SEND_STATE:
+	 	 case USART_SEND_STATE:
 	 	 {
-
+	 		 if( (PID_Usart.sreg & USART_TRANSMIT_BUF) && (!PID_Usart.SendedCounter) )
+	 		 {
+	 			USARTSendBuf(&PID_Usart);
+	 		 }
 	 		StateMachine++;
 	 		break;
 	 	 }
@@ -106,6 +128,7 @@ int main(void)
 	 		 if (PowerSupply.sreg & POWER_NEW_VOLTAGE)
 	 		 	 {
 	 			 	 PowerCheckVoltageCount(&PowerSupply);
+
 	 			 	 PowerSupply.sreg &= ~POWER_NEW_VOLTAGE;
 
 	 		 	 }
@@ -117,7 +140,7 @@ int main(void)
 	 		if (pid_capacitor.sreg & PID_INIT)
 
 	 			{					//		Kp   Ki  Kd	 dt	min	max  	target
-	 				PID_Init(&pid_capacitor, 300, 10, 4, 10, 1, 10000, 2000);		// Kx *100 dt in ms target in mV
+	 				PID_Init(&pid_capacitor, 300, 10, 4, 10, 1, 10000, pid_capacitor.target);		// Kx *100 dt in ms target in mV
 					pid_capacitor.sreg &= ~PID_INIT;
 	 			}
 
@@ -141,6 +164,14 @@ int main(void)
 	 	 		PWM_Unit.Fulfillment= (uint16_t)(((uint32_t)PWM_Unit.Freq * (uint32_t)temp_16)/(pid_capacitor.output_max));
 	 	 		PWM_Unit.TIMx->CCR1 =(uint16_t)PWM_Unit.Fulfillment;
 	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] = 1; //PWM_Unit.FanSpeedChangeDelayValue;
+
+	 			if (!PID_Usart.TxCounter)
+		 		 {
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = "V";
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = "=";
+		 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(PowerSupply.Voltage, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+		 			 PID_Usart.sreg |= USART_TRANSMIT_BUF;
+		 		 }
 	 		 }
 	 		 StateMachine++;
 
@@ -195,6 +226,7 @@ uint8_t HARDWARE_INIT(void)
 		OLEDHardwareInit();
 		OLEDDisplayInit(&LCD_OLED);
 		OLEDDisplayCleare(&LCD_OLED);
+		USARTHardwareInit(&PID_Usart);
 		HWInitStatus=1;
 	}
 
@@ -209,8 +241,12 @@ uint8_t SOFTWARE_INIT(void)
 	{
 		TIMERS_SOFTWARE_INIT();
 		PowerCheckSoftwareInit(&PowerSupply);
+		PID_DEF_Init(&pid_capacitor);
 		OLEDSoftwareInit(&LCD_OLED);
+		PID_Usart.sreg = USART_INIT;
+		USARTSoftwareInit (&PID_Usart);
 		SWInitStatus=1;
+
 	}
 	return SWInitStatus;
 }

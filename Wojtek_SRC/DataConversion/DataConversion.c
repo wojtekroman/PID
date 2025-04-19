@@ -318,3 +318,35 @@ void AVERAGE_VALUE_16(uint16_t value, uint16_t *average)
 		}
 
 }
+
+
+
+
+
+/****change decimal 16 bit to string ASCII ********/
+
+uint32_t STRING_TO_DEC_(uint8_t *string)
+{
+	uint8_t i, tempDig;
+	uint32_t mnoznik=1;
+	uint32_t tempValue=0;
+
+	i=0;
+	while (string[i]>=0x30 && string[i]<=0x39)
+	{
+
+		tempDig = string[i]-0x30;			// przejscie ze stringa na digit
+		tempValue+=tempDig;
+		i++;
+		if (string[i]>=0x30 && string[i]<=0x39)
+			tempValue*=10;
+
+		if (tempValue >=4000000000)
+		{
+			break;
+		}
+	}
+	return tempValue;
+
+}
+
