@@ -42,37 +42,7 @@ void TimerForPWMHardwareInit(PWM_t *PWM_dev)
 //		DBGMCU->APB1FZ |= (uint32_t)(DBGMCU_APB1_FZ_DBG_TIM14_STOP);
 	}
 #endif
-/*/ ***************** To be removed ? ******************************
 
-	if ((RCC->CFGR & RCC_CFGR_PPRE1_DIV2) && ((PWM_TIMER == TIM3)||(PWM_TIMER == TIM4)))
-	{
-		localSystemClock = SystemCoreClock / 2;			// Peripheria in APB1 have system clock / 2 (see user manual page 125)  in system_stm32F10x.c line 1028 RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
-
-	}
-	else if ((PWM_dev->TIMx == TIM3) || (PWM_TIMER == TIM4))
-	{
-		localSystemClock = 8000000;//SystemCoreClock;
-	}
-
-	// ***************** To be removed ? END ******************************
-
-
-	// TIM 1 is from system clock, check do we have prescaler for APB2 set
-#ifdef STM32F103C8
-	if (!(RCC->CFGR & RCC_CFGR_PPRE2_2) )
-	{
-		localSystemClock = SystemCoreClock;
-	}
-	else
-	{
-		localSystemClock = SystemCoreClock / (1<< (RCC->CFGR & (~RCC_CFGR_PPRE2_2)) );
-	}
-
-
-	localSystemClock = SystemCoreClock / (1<< ((RCC->CFGR & (~RCC_CFGR_PPRE2_2))>>10) );
-#endif
-
-*/
 
 	/* timer switch ON */
 
@@ -112,14 +82,13 @@ void TimerForPWMHardwareInit(PWM_t *PWM_dev)
 	 	TIM_OCInitStructure.TIM_Pulse = (uint16_t)(PWM_dev->Fulfillment);
 	 	TIM_OC1Init(PWM_dev->TIMx, &TIM_OCInitStructure);
 		TIM_OC1PreloadConfig(PWM_dev->TIMx, TIM_OCPreload_Enable);
-		//TIM_OC2Init(PWM_dev->TIMx, &TIM_OCInitStructure);
-		//TIM_OC2PreloadConfig(PWM_dev->TIMx, TIM_OCPreload_Enable);
+
 
 		// *************** BDTR register configuration ********************
 		bdtr.TIM_OSSRState = TIM_OSSRState_Enable;
 		bdtr.TIM_OSSIState = TIM_OSSIState_Enable;
 		bdtr.TIM_LOCKLevel = TIM_LOCKLevel_OFF;
-		bdtr.TIM_DeadTime = 5;
+		bdtr.TIM_DeadTime = 0x10;
 		bdtr.TIM_Break = TIM_Break_Disable;
 		bdtr.TIM_BreakPolarity = TIM_BreakPolarity_High;
 		bdtr.TIM_AutomaticOutput = TIM_AutomaticOutput_Enable;
@@ -197,8 +166,8 @@ void PWM_SoftwareInit(void)
 {
 	PWM_Unit.sreg = PWM_DEF_SREG;
 	PWM_Unit.TIMx = PWM_TIMER;
-	PWM_Unit.Freq = PWM_SET_FREQ(10000);
-	PWM_Unit.Fulfillment = PWM_Unit.Freq/1000;			//przy Fill rownym 0x00000193f jest prawie max napiecie = 6450
+	PWM_Unit.Freq = PWM_SET_FREQ(PWM_MAIN_FREQ);
+	PWM_Unit.Fulfillment = PWM_Unit.Freq/2;			//przy Fill rownym 0x00000193f jest prawie max napiecie = 6450
 
 
 }

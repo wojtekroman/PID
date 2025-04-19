@@ -65,12 +65,10 @@ void PowerCheckVoltageCount (PowerCheck_t *Power)
  uint32_t TempVoltage=0;
  TempVoltage = (uint32_t)((uint32_t)(Power->PowerValue) * (uint32_t)ADC_DELTA_VOLTAGE);
  TempVoltage *=2; // due to voltage divider at ADC input.
- //TempVoltage/=10;//TempVoltage= TempVoltage + (TempVoltage/10);
- if (Power->Voltage >= TempVoltage ? Power->Voltage - TempVoltage > ADC_FILTER_VALUE : TempVoltage - Power->Voltage  > ADC_FILTER_VALUE)
- {
-	Power->Voltage = TempVoltage;
-	Power->sreg |= POWER_NEW_VOLTAGE;
- }
+ TempVoltage/=10;		//	ADC_DELTA_VOLTAGE = 33000 /4096 instead of 3300/4096
+ Power->Voltage = TempVoltage;
+ Power->sreg |= POWER_NEW_VOLTAGE;
+
 }
 
 void PowerCheckVoltageToString (PowerCheck_t *Power, uint8_t *string)

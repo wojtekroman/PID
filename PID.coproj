@@ -96,8 +96,8 @@
     <File name="Wojtek_SRC/DataConvert" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_tim.c" path="stm_lib/src/stm32f10x_tim.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_pwr.h" path="stm_lib/inc/stm32f10x_pwr.h" type="1"/>
-    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="Wojtek_SRC/PID" path="" type="2"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="stm_lib/src/misc.c" path="stm_lib/src/misc.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_iwdg.c" path="stm_lib/src/stm32f10x_iwdg.c" type="1"/>
@@ -111,13 +111,13 @@
     <File name="stm_lib/inc/stm32f10x_iwdg.h" path="stm_lib/inc/stm32f10x_iwdg.h" type="1"/>
     <File name="Wojtek_SRC/SSD1306" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
-    <File name="Wojtek_SRC/PID/PID.h" path="Wojtek_SRC/PID/PID.h" type="1"/>
-    <File name="Wojtek_SRC/Timers/timers.h" path="Wojtek_SRC/Timers/timers.h" type="1"/>
     <File name="Wojtek_SRC/Main/main.h" path="Wojtek_SRC/main.h" type="1"/>
+    <File name="Wojtek_SRC/Timers/timers.h" path="Wojtek_SRC/Timers/timers.h" type="1"/>
+    <File name="Wojtek_SRC/PID/PID.h" path="Wojtek_SRC/PID/PID.h" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f10x_md.c" path="cmsis_boot/startup/startup_stm32f10x_md.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_pwr.c" path="stm_lib/src/stm32f10x_pwr.c" type="1"/>
-    <File name="Wojtek_SRC/WDG" path="" type="2"/>
     <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
+    <File name="Wojtek_SRC/WDG" path="" type="2"/>
     <File name="stm_lib/inc/stm32f10x_gpio.h" path="stm_lib/inc/stm32f10x_gpio.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
     <File name="Wojtek_SRC/Timers" path="" type="2"/>

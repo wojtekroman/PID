@@ -6,7 +6,7 @@
 	#include "stm32f10x_tim.h"
 
 #endif
-
+	#define PWM_MAIN_FREQ			100
 	#define PWM_DEF_ON_SPEED 		((FAN_MAX_SPED + FAN_MIN_SPEED)/2)	//800
 	#define PWM_NEW_VALUE			0x01
 	#define	PWM_DEF_FREQ			SystemCoreClock
