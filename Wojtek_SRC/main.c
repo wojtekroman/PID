@@ -25,7 +25,7 @@ int main(void)
  RSPointer=0;
  static uint8_t StringBuffer[30];
  static uint8_t digit;
- int i=0;
+ int i=0, j=0;
  uint8_t TempString[10];
 
 
@@ -72,22 +72,123 @@ int main(void)
 
 	 	 case USART_READ_STATE:
 	 	 {
-	 		 if ((PID_Usart.RxBuffer[PID_Usart.RxCounter-1] == 0x0a) || (PID_Usart.RxBuffer[PID_Usart.RxCounter-1] == 0x0d ))
-	 		 {
-	 			if(PID_Usart.RxBuffer[0]=='T')
-	 			{
-	 				i=0;
-	 				do{
-	 					TempString[i]= PID_Usart.RxBuffer[2+i];
-	 					i++;
-	 				}while (PID_Usart.RxBuffer[2+i]>=0x30 && PID_Usart.RxBuffer[2+i]<=0x39);				// while digits are in the buffer
 
-	 				TempString[i]=0;
-	 				pid_capacitor.target = (uint16_t) STRING_TO_DEC_(TempString);
-	 				pid_capacitor.sreg |= PID_RESET;
-	 				PID_TargetInit(&pid_capacitor, pid_capacitor.target);
-	 				PID_Usart.RxBuffer[0]=0;
-	 				PID_Usart.RxCounter=0;
+
+	 		 if ((PID_Usart.RxBuffer[PID_Usart.RxCounter-2] == 0x0a) || (PID_Usart.RxBuffer[PID_Usart.RxCounter-1] == 0x0d ))
+	 		 {
+	 			j=0;
+	 			TempString[0]='@';
+	 			TempString[1]=0;
+	 			i= FindString(PID_Usart.RxBuffer, TempString );
+	 			if (i!= 0xFF)
+	 				i++;
+	 			else{
+	 				i=0;
+	 			}
+	 			switch (PID_Usart.RxBuffer[i])
+	 			{
+	 				case 'T':
+	 				{
+
+		 				i+=2;
+		 				do{
+		 					TempString[j]= PID_Usart.RxBuffer[j+i];
+		 					j++;
+		 				}while (PID_Usart.RxBuffer[j+i]>=0x30 && PID_Usart.RxBuffer[j+i]<=0x39);				// while digits are in the buffer
+
+		 				TempString[j]=0;
+		 				pid_capacitor.target = (uint16_t) STRING_TO_DEC_(TempString);
+		 				pid_capacitor.sreg |= PID_RESET;
+		 				PID_TargetInit(&pid_capacitor, pid_capacitor.target);
+		 				PID_Usart.RxBuffer[0]=0;
+		 				PID_Usart.RxCounter=0;
+		 				pid_capacitor.sreg |=PID_TARGET_PRINT;
+		 				break;
+
+	 				}
+	 				case 'P':
+	 				{
+	 					i+=2;
+	 					j=0;
+	 					do{
+	 						TempString[j]= PID_Usart.RxBuffer[j+i];
+	 					 	j++;
+	 					}while (PID_Usart.RxBuffer[j+i]>=0x30 && PID_Usart.RxBuffer[j+i]<=0x39);				// while digits are in the buffer
+
+	 					TempString[j]=0;
+	 					pid_capacitor.Kp = (uint16_t) STRING_TO_DEC_(TempString);
+	 					pid_capacitor.sreg |= PID_RESET;
+	 					PID_NewUint16Init(&pid_capacitor, &(pid_capacitor.Kp), pid_capacitor.Kp);
+	 					//PID_KpInit(&pid_capacitor, pid_capacitor.Kp);
+	 					pid_capacitor.sreg |=PID_KP_PRINT;
+	 					PID_Usart.RxBuffer[0]=0;
+	 					PID_Usart.RxCounter=0;
+	 					break;
+
+	 				}
+	 				case 'I':
+	 				{
+	 					i+=2;
+	 					j=0;
+	 					do{
+	 						TempString[j]= PID_Usart.RxBuffer[j+i];
+	 					 	j++;
+	 					}while (PID_Usart.RxBuffer[j+i]>=0x30 && PID_Usart.RxBuffer[j+i]<=0x39);				// while digits are in the buffer
+
+	 					TempString[j]=0;
+	 					pid_capacitor.Ki = (uint16_t) STRING_TO_DEC_(TempString);
+	 					pid_capacitor.sreg |= PID_RESET;
+	 					PID_NewUint16Init(&pid_capacitor, &(pid_capacitor.Ki), pid_capacitor.Ki);
+	 					PID_Usart.RxBuffer[0]=0;
+	 					PID_Usart.RxCounter=0;
+	 					pid_capacitor.sreg |=PID_KI_PRINT;
+	 					break;
+
+	 				}
+	 				case 'D':
+	 				{
+	 					i+=2;
+	 					j=0;
+	 					do{
+	 						TempString[j]= PID_Usart.RxBuffer[j+i];
+	 					 	j++;
+	 					}while (PID_Usart.RxBuffer[j+i]>=0x30 && PID_Usart.RxBuffer[j+i]<=0x39);				// while digits are in the buffer
+
+	 					TempString[j]=0;
+	 					pid_capacitor.Kd = (uint16_t) STRING_TO_DEC_(TempString);
+	 					pid_capacitor.sreg |= PID_RESET;
+	 					PID_NewUint16Init(&pid_capacitor, &(pid_capacitor.Kd), pid_capacitor.Kd);
+	 					PID_Usart.RxBuffer[0]=0;
+	 					PID_Usart.RxCounter=0;
+	 					pid_capacitor.sreg |=PID_KD_PRINT;
+	 					break;
+
+	 				}
+
+	 				case 'C':
+	 				{
+	 					i+=2;
+	 					j=0;
+	 					do{
+	 						TempString[j]= PID_Usart.RxBuffer[j+i];
+	 					 	i++;
+	 					}while (PID_Usart.RxBuffer[j+i]>=0x30 && PID_Usart.RxBuffer[j+i]<=0x39);				// while digits are in the buffer
+
+	 					TempString[j]=0;
+	 					pid_capacitor.dt= (uint16_t) STRING_TO_DEC_(TempString);
+	 					pid_capacitor.sreg |= PID_RESET;
+	 					PID_NewUint16Init(&pid_capacitor, &(pid_capacitor.dt), pid_capacitor.dt);
+	 					PID_Usart.RxBuffer[0]=0;
+	 					PID_Usart.RxCounter=0;
+	 					pid_capacitor.sreg |=PID_DT_PRINT;
+	 					break;
+
+	 				}
+	 				case '?':
+	 				{
+	 					pid_capacitor.sreg |= PID_PRINT_MASK;
+	 				}
+
 	 			}
 	 		 }
 	 		StateMachine++;
@@ -96,6 +197,49 @@ int main(void)
 
 	 	 case USART_SEND_STATE:
 	 	 {
+	 		 if ( (pid_capacitor.sreg & PID_PRINT_MASK) && (!PID_Usart.SendedCounter))
+	 		 {
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'K';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'p';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
+	 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(pid_capacitor.Kp, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ';';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ' ';
+
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'K';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'i';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
+	 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(pid_capacitor.Ki, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ';';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ' ';
+
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'K';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'd';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
+	 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(pid_capacitor.Kd, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ';';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ' ';
+
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'D';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 't';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
+	 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(pid_capacitor.dt, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ';';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ' ';
+
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'T';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'a';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
+	 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(pid_capacitor.target, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ';';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = ' ';
+	 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '\n';
+
+	 			 USARTSendBuf(&PID_Usart);
+	 			 pid_capacitor.sreg &= ~PID_PRINT_MASK;
+	 			 PID_Usart.sreg |= USART_TRANSMIT_BUF;
+	 		 }
+
 	 		 if( (PID_Usart.sreg & USART_TRANSMIT_BUF) && (!PID_Usart.SendedCounter) )
 	 		 {
 	 			USARTSendBuf(&PID_Usart);
@@ -140,7 +284,7 @@ int main(void)
 	 		if (pid_capacitor.sreg & PID_INIT)
 
 	 			{					//		Kp   Ki  Kd	 dt	min	max  	target
-	 				PID_Init(&pid_capacitor, 300, 10, 4, 10, 1, 10000, pid_capacitor.target);		// Kx *100 dt in ms target in mV
+	 				PID_Init(&pid_capacitor, 100, 10, 8, 10, 1, 10000, pid_capacitor.target);		// Kx *100 dt in ms target in mV
 					pid_capacitor.sreg &= ~PID_INIT;
 	 			}
 
@@ -167,9 +311,11 @@ int main(void)
 
 	 			if (!PID_Usart.TxCounter)
 		 		 {
-		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = "V";
-		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = "=";
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'V';
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '=';
 		 			 PID_Usart.TxCounter += U16_DEC_TO_STRING(PowerSupply.Voltage, &(PID_Usart.TxBuffer[PID_Usart.TxCounter]));
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '\n';
+		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = '\r';
 		 			 PID_Usart.sreg |= USART_TRANSMIT_BUF;
 		 		 }
 	 		 }

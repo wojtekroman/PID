@@ -29,15 +29,15 @@
 		uint16_t usart_rx_pin;
 		uint16_t usart_tx_pin;
 		GPIO_TypeDef *Usart_PORT;
-		uint8_t RxBuffer[BUFFER_SIZE];
-		uint8_t TxBuffer[BUFFER_SIZE];
-		uint8_t RxCounter;
-		uint8_t TxCounter;
-		uint8_t SendedCounter;
+		volatile uint8_t RxBuffer[BUFFER_SIZE];
+		volatile uint8_t TxBuffer[BUFFER_SIZE*5];
+		volatile uint8_t RxCounter;
+		volatile uint8_t TxCounter;
+		volatile uint8_t SendedCounter;
 
 		uint16_t BaudRate;
 
-		uint8_t sreg;
+		volatile uint8_t sreg;
 
 	}Usart_t;
 

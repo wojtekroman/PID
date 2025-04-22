@@ -147,6 +147,11 @@ void USART1_IRQHandler(void)
 
     	PID_Usart.RxBuffer[PID_Usart.RxCounter] =USART_ReceiveData(USART1);
     	PID_Usart.RxCounter++;
+ 		if( PID_Usart.RxCounter  >= BUFFER_SIZE)		// buffer overflow!!
+ 		{
+ 			PID_Usart.RxCounter  = 0;
+ 		}
+ 		PID_Usart.RxBuffer[PID_Usart.RxCounter] =0;
     	PID_Usart.sreg |= USART_NEW_DATA;
 		USART1->SR &= ~USART_FLAG_RXNE;
 	}

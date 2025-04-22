@@ -38,6 +38,57 @@ void PID_TargetInit(PID_t* pid, uint16_t target)
 	}
 }
 
+/*
+void PID_KpInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kp = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+
+void PID_KiInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Ki = (uint16_t)target;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+void PID_KdInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kd = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+void PID_DtInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kd = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+*/
+void PID_NewUint16Init(PID_t* pid, uint16_t* parameter, uint16_t newValue)
+{
+	*parameter = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
 uint16_t PID_Compute(PID_t* pid, uint16_t setpoint, uint16_t measurement)
 {
 	int32_t derivative =0 , Dout=0 , output=0, Pout=0, Iout=0;

@@ -24,8 +24,14 @@ PID_t pid_capacitor;
 #define MIN_INT32_T	0x80000000
 
 // **************** SREG *****************8
-#define PID_INIT	0x01
-#define PID_RESET	0x02
+#define PID_INIT			0x01
+#define PID_RESET			0x02
+#define PID_KP_PRINT		0x04
+#define PID_KI_PRINT		0x08
+#define PID_KD_PRINT		0x10
+#define PID_DT_PRINT		0x20
+#define PID_TARGET_PRINT	0x40
+#define PID_PRINT_MASK		0x7C		//(0b1111100))
 
 
 

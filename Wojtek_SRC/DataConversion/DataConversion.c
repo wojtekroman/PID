@@ -141,7 +141,40 @@ uint8_t U8_DEC_TO_STRING(uint8_t value, uint8_t *string)
 	return i;
 }
 
+// **************** string find **********************
+uint8_t FindString(uint8_t *Source, uint8_t *ToBeFound )
+{
+	uint8_t ToBeFoundIndex=0, SourceIndex=0;
+	uint8_t status=0, ReturnIndex=0;
 
+	do {
+		if (ToBeFound[ToBeFoundIndex] == Source[SourceIndex])
+		{
+			status=1;
+			ToBeFoundIndex++;
+			SourceIndex++;
+			if (ToBeFound[ToBeFoundIndex] == 0)
+				break;
+		}
+		else{
+			status=0;
+			ToBeFoundIndex=0;
+			SourceIndex++;
+		}
+
+	}while (Source[SourceIndex] != 0 );
+
+	if(status)
+	{
+		ReturnIndex = SourceIndex-ToBeFoundIndex;
+	}
+	else {
+		ReturnIndex=0xFF;
+	}
+
+	return ReturnIndex;
+
+}
 /****change decimal 16 bit to string ASCII ********/
 
 uint8_t U16_DEC_TO_STRING(uint16_t value, uint8_t *string)
