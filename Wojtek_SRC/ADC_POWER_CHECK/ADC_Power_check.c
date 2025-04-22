@@ -56,6 +56,7 @@ void PowerCheckSoftwareInit(PowerCheck_t *Power)
 	Power->ADC_Calibration=ADC_NO_DATA;
 	Power->Voltage = 0;
 	Power->MAX_Voltage = MAX_VOLTAGE;
+
 }
 
 

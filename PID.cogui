@@ -4,8 +4,8 @@
 <window>
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.ExpressionView"/>
-<orientation position="512" view="org.eclipse.search.ui.views.SearchView"/>
 <orientation position="512" view="org.coocox.codebugger.trace.ui.traceview"/>
+<orientation position="512" view="org.eclipse.search.ui.views.SearchView"/>
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
 <orientation position="512" view="org.eclipse.debug.ui.VariableView"/>
@@ -30,41 +30,17 @@
 <part id="9"/>
 <part id="10"/>
 <part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.c" title="main.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/Main/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2520" selectionTopPixel="2309"/>
-</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" partName="main.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.h" title="main.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/Main/main.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="480" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PID.h" partName="PID.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.h" title="PID.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PID/PID.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="355" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="PID.c" partName="PID.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.c" title="PID.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PID/PID.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1091" selectionTopPixel="65"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.c" partName="PWM.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.c" title="PWM.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PWM/PWM.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4796" selectionTopPixel="1681"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ADC_Power_check.h" partName="ADC_Power_check.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" title="ADC_Power_check.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/ADC/ADC_Power_check.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="1086" selectionTopPixel="198"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.h" partName="PWM.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.h" title="PWM.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PWM/PWM.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="175" selectionTopPixel="30"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="OLED.c" partName="OLED.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/SSD1306/OLED.c" title="OLED.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/SSD1306/OLED.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/SSD1306/OLED.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="18710" selectionTopPixel="12818"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="328" selectionTopPixel="60"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="OLED.h" partName="OLED.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/SSD1306/OLED.h" title="OLED.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/SSD1306/OLED.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/SSD1306/OLED.h"/>
@@ -74,76 +50,122 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/Timers/timers.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="12" selectionOffset="1902" selectionTopPixel="905"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ADC_Power_check.c" partName="ADC_Power_check.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.c" title="ADC_Power_check.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/ADC/ADC_Power_check.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1698" selectionTopPixel="884"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" partName="startup_stm32f10x_md.c" path="M:/CooCox/CoIDE178/workspace/PID/cmsis_boot/startup/startup_stm32f10x_md.c" title="startup_stm32f10x_md.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/cmsis_boot/startup/startup_stm32f10x_md.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/cmsis_boot/startup/startup_stm32f10x_md.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10032" selectionTopPixel="2941"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.c" title="main.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/Main/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6571" selectionTopPixel="3404"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="USART.c" partName="USART.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/USART/USART.c" title="USART.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/USART/USART.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/USART/USART.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="4075" selectionTopPixel="2370"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="USART.h" partName="USART.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/USART/USART.h" title="USART.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/USART/USART.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/USART/USART.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="984" selectionTopPixel="177"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" partName="stm32f10x_gpio.h" path="M:/CooCox/CoIDE178/workspace/PID/stm_lib/inc/stm32f10x_gpio.h" title="stm32f10x_gpio.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/stm_lib/inc/stm32f10x_gpio.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/stm_lib/inc/stm32f10x_gpio.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="4768" selectionTopPixel="2108"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.h" partName="PWM.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.h" title="PWM.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PWM_SRC/PWM.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PWM/PWM.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="52" selectionOffset="1535" selectionTopPixel="833"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_usart.h" partName="stm32f10x_usart.h" path="M:/CooCox/CoIDE178/workspace/PID/stm_lib/inc/stm32f10x_usart.h" title="stm32f10x_usart.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/stm_lib/inc/stm32f10x_usart.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/stm_lib/inc/stm32f10x_usart.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="5398" selectionTopPixel="1921"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_rcc.c" partName="stm32f10x_rcc.c" path="M:/CooCox/CoIDE178/workspace/PID/stm_lib/src/stm32f10x_rcc.c" title="stm32f10x_rcc.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/stm_lib/src/stm32f10x_rcc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/stm_lib/src/stm32f10x_rcc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="38109" selectionTopPixel="18411"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="DataConversion.c" partName="DataConversion.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/DataConversion/DataConversion.c" title="DataConversion.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/DataConversion/DataConversion.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/DataConvert/DataConversion.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1864" selectionTopPixel="2419"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PID.h" partName="PID.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.h" title="PID.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PID/PID.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="669" selectionTopPixel="161"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="PID.c" partName="PID.c" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.c" title="PID.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/PID/PID.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/PID/PID.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1821" selectionTopPixel="1103"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ADC_Power_check.h" partName="ADC_Power_check.h" path="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" title="ADC_Power_check.h" tooltip="M:/CooCox/CoIDE178/workspace/PID/Wojtek_SRC/ADC_POWER_CHECK/ADC_Power_check.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/Wojtek_SRC/ADC/ADC_Power_check.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="353" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" partName="startup_stm32f10x_md.c" path="M:/CooCox/CoIDE178/workspace/PID/cmsis_boot/startup/startup_stm32f10x_md.c" title="startup_stm32f10x_md.c" tooltip="M:/CooCox/CoIDE178/workspace/PID/cmsis_boot/startup/startup_stm32f10x_md.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PID/cmsis_boot/startup/startup_stm32f10x_md.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="10032" selectionTopPixel="2941"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.ui.views.ProgressView" partName="Progress"/>
-<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
-<viewState isPinned="false">
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
-</viewState>
-</view>
-<view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting">
-<viewState/>
-</view>
-<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
-<viewState/>
-</view>
-<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" partName="Memory Browser">
-<viewState>
-<MemoryBroser ComboItemsValue="0x2000028;" FocuseTabIndex="0" TabsValue="" TextValue="0x2000028" horizontalPosition="0" verticalPosition="0"/>
-</viewState>
-</view>
-<view id="org.coocox.coassistant.view.CoAssistantView_debug" partName="Peripherals">
-<viewState horizontalPosition="0" verticalPosition="0">
-<selection>
-<element name="TIM1"/>
-</selection>
-<registerValues baseAddress="Base Address: 0x40012C00" description="Description:  TIM1 registers"/>
-</viewState>
-</view>
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
 <viewState>
-<ExpressionKeySet ExpKeys="&amp;pid_capacitor,&amp;error,&amp;pid,&amp;temp_16,PWM_Unit,PWM_Unit.TIMx-&gt;CCR1,&amp;PowerSupply,"/>
+<ExpressionKeySet ExpKeys="&amp;pid_capacitor,&amp;error,&amp;pid,&amp;temp_16,PWM_Unit,PWM_Unit.TIMx-&gt;CCR1,&amp;PowerSupply,&amp;PID_Usart,*string,&amp;i,tempDig,tempValue,string,&amp;(pid_capacitor-&gt;Kp),&amp;value,&amp;pid_capacitor-&gt;Kp,"/>
 </viewState>
 </view>
-<view id="org.coocox.component.ui.ComponentView" partName="Components">
-<viewState/>
-</view>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress"/>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="2">
+<viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="14">
 <expanded>
 <element path="/PID"/>
 <element path="/PID/cmsis_boot"/>
 <element path="/PID/cmsis_boot/startup"/>
 <element path="/PID/stm_lib"/>
 <element path="/PID/stm_lib/inc"/>
+<element path="/PID/stm_lib/src"/>
 <element path="/PID/Wojtek_SRC"/>
 <element path="/PID/Wojtek_SRC/ADC"/>
+<element path="/PID/Wojtek_SRC/DataConvert"/>
 <element path="/PID/Wojtek_SRC/Main"/>
 <element path="/PID/Wojtek_SRC/PID"/>
 <element path="/PID/Wojtek_SRC/PWM"/>
 <element path="/PID/Wojtek_SRC/SSD1306"/>
 <element path="/PID/Wojtek_SRC/Timers"/>
+<element path="/PID/Wojtek_SRC/USART"/>
 </expanded>
 <selection>
-<element path="/PID/Wojtek_SRC/PID/PID.c"/>
+<element path="/PID/Wojtek_SRC/Main/main.c"/>
 </selection>
+</viewState>
+</view>
+<view id="org.coocox.component.ui.ComponentView" partName="Components">
+<viewState/>
+</view>
+<view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting"/>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
 <view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
 <viewState/>
 </view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
+</view>
+<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" partName="Memory Browser">
+<viewState>
+<MemoryBroser ComboItemsValue="0x2000986;0x20000986;" FocuseTabIndex="0" TabsValue="" TextValue="0x20000986" horizontalPosition="0" verticalPosition="0"/>
+</viewState>
+</view>
+<view id="org.coocox.coassistant.view.CoAssistantView_debug" partName="Peripherals">
+<viewState horizontalPosition="0" verticalPosition="0">
+<selection>
+<element name="USART1"/>
+</selection>
+<registerValues baseAddress="Base Address: 0x40013800" description="Description:  Universal synchronous/asynchronous receiver/transmitter 1 registers"/>
+</viewState>
 </view>
 <view id="org.coocox.component.ui.Help" partName="Help">
 <viewState/>
@@ -179,6 +201,7 @@
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <fastViewBars>
@@ -186,11 +209,6 @@
 <fastViews>
 <view id="org.coocox.component.ui.Help" ratio="0.3"/>
 <view id="org.eclipse.search.ui.views.SearchView" ratio="0.29814324"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1650b6c" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">
-<fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29581994"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@16b7272" orientation="512" selectedTabId="org.eclipse.debug.ui.ExpressionView" style="0">
@@ -234,9 +252,11 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.44908896" ratioLeft="419" ratioRight="514" relationship="4" relative="org.coocox.builder.ui.exampleView"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1650b6c" ratio="0.68064517" ratioLeft="633" ratioRight="297" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@16b7272" ratio="0.81365186" ratioLeft="1192" ratioRight="273" relationship="2" relative="org.eclipse.ui.editorss">
@@ -305,10 +325,10 @@
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
 <fastViewBars>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@c57e62" orientation="256" selectedTabId="org.eclipse.search.ui.views.SearchView" style="0">
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@c57e62" orientation="256" selectedTabId="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" style="0">
 <fastViews>
 <view id="org.coocox.codebugger.trace.ui.traceview" ratio="0.3"/>
-<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" ratio="0.3"/>
+<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" ratio="0.29903537"/>
 <view id="org.eclipse.ui.views.ProgressView" ratio="0.3"/>
 <view id="org.eclipse.search.ui.views.SearchView" ratio="0.29903537"/>
 </fastViews>
@@ -385,161 +405,160 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/Main/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/PID/PID.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/ADC/ADC_Power_check.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/PID/PID.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/PWM/PWM.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/DataConvert/DataConversion.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/cmsis_boot/startup/startup_stm32f10x_md.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/USART/USART.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/PID/Wojtek_SRC/USART/USART.h"/>
 </editors>
-<item historyLabel="ADC_Power_check.c" index="2">
-<position info="not_deleted" x="1552" y="0"/>
-</item>
-<item historyLabel="ADC_Power_check.c" index="2">
-<position info="not_deleted" x="1628" y="0"/>
-</item>
-<item historyLabel="ADC_Power_check.c" index="2">
-<position info="not_deleted" x="1660" y="0"/>
-</item>
-<item historyLabel="ADC_Power_check.c" index="2">
-<position info="not_deleted" x="1698" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="2399" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1804" y="0"/>
+<position info="not_deleted" x="2464" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2480" y="0"/>
+<position info="not_deleted" x="2495" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2573" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="510" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="573" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="627" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="717" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="449" y="0"/>
-</item>
-<item historyLabel="PID.h" index="3">
-<position info="not_deleted" x="152" y="7"/>
+<position info="not_deleted" x="4449" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2573" y="0"/>
-</item>
-<item historyLabel="PID.h" index="3">
-<position/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1092" y="0"/>
-</item>
-<item historyLabel="PWM.h" index="4">
-<position info="not_deleted" x="175" y="0"/>
-</item>
-<item historyLabel="PID.h" index="3">
-<position/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1092" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1063" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1204" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1319" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1400" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1455" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1534" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1690" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="864" y="0"/>
-</item>
-<item historyLabel="PID.h" index="3">
-<position info="not_deleted" x="355" y="11"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="864" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="936" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1052" y="0"/>
-</item>
-<item historyLabel="startup_stm32f10x_md.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="4462" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="447" y="0"/>
+<position info="not_deleted" x="4505" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2473" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="510" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="573" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="627" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="717" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="844" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="967" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1026" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1094" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1204" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1319" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1400" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1455" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1534" y="0"/>
-</item>
-<item historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1690" y="0"/>
+<position info="not_deleted" x="4459" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2520" y="0"/>
+<position info="not_deleted" x="4561" y="0"/>
 </item>
-<item active="true" historyLabel="PID.c" index="1">
-<position info="not_deleted" x="1690" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4803" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4629" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1909" y="11"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4449" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1864" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1890" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1897" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1920" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="2362" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="2362" y="0"/>
+</item>
+<item historyLabel="startup_stm32f10x_md.c" index="2">
+<position info="not_deleted" x="14075" y="0"/>
+</item>
+<item historyLabel="startup_stm32f10x_md.c" index="2">
+<position info="not_deleted" x="14132" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4658" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1823" y="5"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4664" y="0"/>
+</item>
+<item historyLabel="USART.c" index="3">
+<position info="not_deleted" x="4075" y="9"/>
+</item>
+<item historyLabel="USART.h" index="4">
+<position info="not_deleted" x="984" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4615" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1890" y="0"/>
+</item>
+<item historyLabel="USART.h" index="4">
+<position info="not_deleted" x="984" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1827" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6257" y="0"/>
+</item>
+<item historyLabel="startup_stm32f10x_md.c" index="2">
+<position info="not_deleted" x="10032" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="468" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="DataConversion.c" index="1">
+<position info="not_deleted" x="1864" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4617" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4728" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4784" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4842" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5247" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4898" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4954" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5010" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5121" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5177" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="5235" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -548,32 +567,11 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md.c" tooltip="PID/cmsis_boot/startup/startup_stm32f10x_md.c">
-<persistable path="/PID/cmsis_boot/startup/startup_stm32f10x_md.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ADC_Power_check.c" tooltip="PID/Wojtek_SRC/ADC/ADC_Power_check.c">
 <persistable path="/PID/Wojtek_SRC/ADC/ADC_Power_check.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="timers.h" tooltip="PID/Wojtek_SRC/Timers/timers.h">
-<persistable path="/PID/Wojtek_SRC/Timers/timers.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="OLED.h" tooltip="PID/Wojtek_SRC/SSD1306/OLED.h">
-<persistable path="/PID/Wojtek_SRC/SSD1306/OLED.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="timers.c" tooltip="PID/Wojtek_SRC/Timers/timers.c">
-<persistable path="/PID/Wojtek_SRC/Timers/timers.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="OLED.c" tooltip="PID/Wojtek_SRC/SSD1306/OLED.c">
-<persistable path="/PID/Wojtek_SRC/SSD1306/OLED.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.h" tooltip="PID/Wojtek_SRC/PWM/PWM.h">
-<persistable path="/PID/Wojtek_SRC/PWM/PWM.h"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ADC_Power_check.h" tooltip="PID/Wojtek_SRC/ADC/ADC_Power_check.h">
 <persistable path="/PID/Wojtek_SRC/ADC/ADC_Power_check.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.c" tooltip="PID/Wojtek_SRC/PWM/PWM.c">
-<persistable path="/PID/Wojtek_SRC/PWM/PWM.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PID.c" tooltip="PID/Wojtek_SRC/PID/PID.c">
 <persistable path="/PID/Wojtek_SRC/PID/PID.c"/>
@@ -581,14 +579,38 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PID.h" tooltip="PID/Wojtek_SRC/PID/PID.h">
 <persistable path="/PID/Wojtek_SRC/PID/PID.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="DataConversion.c" tooltip="PID/Wojtek_SRC/DataConvert/DataConversion.c">
+<persistable path="/PID/Wojtek_SRC/DataConvert/DataConversion.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.c" tooltip="PID/stm_lib/src/misc.c">
+<persistable path="/PID/stm_lib/src/misc.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_rcc.c" tooltip="PID/stm_lib/src/stm32f10x_rcc.c">
+<persistable path="/PID/stm_lib/src/stm32f10x_rcc.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_usart.h" tooltip="PID/stm_lib/inc/stm32f10x_usart.h">
+<persistable path="/PID/stm_lib/inc/stm32f10x_usart.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_rcc.h" tooltip="PID/stm_lib/inc/stm32f10x_rcc.h">
+<persistable path="/PID/stm_lib/inc/stm32f10x_rcc.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.c" tooltip="PID/stm_lib/src/stm32f10x_gpio.c">
+<persistable path="/PID/stm_lib/src/stm32f10x_gpio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.h" tooltip="PID/Wojtek_SRC/PWM/PWM.h">
+<persistable path="/PID/Wojtek_SRC/PWM/PWM.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="PWM.c" tooltip="PID/Wojtek_SRC/PWM/PWM.c">
+<persistable path="/PID/Wojtek_SRC/PWM/PWM.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" tooltip="PID/stm_lib/inc/stm32f10x_gpio.h">
+<persistable path="/PID/stm_lib/inc/stm32f10x_gpio.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="PID/cmsis_boot/stm32f10x.h">
 <persistable path="/PID/cmsis_boot/stm32f10x.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_tim.c" tooltip="PID/stm_lib/src/stm32f10x_tim.c">
-<persistable path="/PID/stm_lib/src/stm32f10x_tim.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_tim.h" tooltip="PID/stm_lib/inc/stm32f10x_tim.h">
-<persistable path="/PID/stm_lib/inc/stm32f10x_tim.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x.h" tooltip="PID/cmsis_boot/stm32f10x.h">
+<persistable path="/PID/cmsis_boot/stm32f10x.h"/>
 </file>
 </mruList>
 </workbench>

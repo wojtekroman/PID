@@ -1,7 +1,7 @@
 #include "PID.h"
 
 // parmeters Kx * 100
-void PID_Init(PID_Controller* pid, uint16_t Kp, uint16_t Ki, uint16_t Kd, uint16_t dt, uint16_t out_min, uint16_t out_max, uint16_t target)
+void PID_Init(PID_t* pid, uint16_t Kp, uint16_t Ki, uint16_t Kd, uint16_t dt, uint16_t out_min, uint16_t out_max, uint16_t target)
 {
     pid->Kp = Kp;
     pid->Ki = Ki;
@@ -14,7 +14,82 @@ void PID_Init(PID_Controller* pid, uint16_t Kp, uint16_t Ki, uint16_t Kd, uint16
     pid->target = (uint16_t)target;
 }
 
-uint16_t PID_Compute(PID_Controller* pid, uint16_t setpoint, uint16_t measurement)
+// parmeters Kx * 100
+void PID_DEF_Init(PID_t* pid)
+{
+    pid->Kp = DEF_KP;
+    pid->Ki = DEF_KI;
+    pid->Kd = DEF_KD;
+    pid->dt = DEF_DT;
+    pid->integral = 0;
+    pid->previous_error = 0;
+    pid->output_min = DEF_OUT_MIN;
+    pid->output_max = DEF_OUT_MAX;
+    pid->target = DEF_TARGET;
+}
+
+void PID_TargetInit(PID_t* pid, uint16_t target)
+{
+	pid->target = (uint16_t)target;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+/*
+void PID_KpInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kp = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+
+void PID_KiInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Ki = (uint16_t)target;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+void PID_KdInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kd = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+void PID_DtInit(PID_t* pid, uint16_t newValue)
+{
+	pid->Kd = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+*/
+void PID_NewUint16Init(PID_t* pid, uint16_t* parameter, uint16_t newValue)
+{
+	*parameter = (uint16_t)newValue;
+	if (pid->sreg & PID_RESET)
+	{
+		 pid->integral = 0;
+		 pid->previous_error = 0;
+	}
+}
+
+uint16_t PID_Compute(PID_t* pid, uint16_t setpoint, uint16_t measurement)
 {
 	int32_t derivative =0 , Dout=0 , output=0, Pout=0, Iout=0;
 

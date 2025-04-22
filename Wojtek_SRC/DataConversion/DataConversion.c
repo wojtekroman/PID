@@ -141,7 +141,40 @@ uint8_t U8_DEC_TO_STRING(uint8_t value, uint8_t *string)
 	return i;
 }
 
+// **************** string find **********************
+uint8_t FindString(uint8_t *Source, uint8_t *ToBeFound )
+{
+	uint8_t ToBeFoundIndex=0, SourceIndex=0;
+	uint8_t status=0, ReturnIndex=0;
 
+	do {
+		if (ToBeFound[ToBeFoundIndex] == Source[SourceIndex])
+		{
+			status=1;
+			ToBeFoundIndex++;
+			SourceIndex++;
+			if (ToBeFound[ToBeFoundIndex] == 0)
+				break;
+		}
+		else{
+			status=0;
+			ToBeFoundIndex=0;
+			SourceIndex++;
+		}
+
+	}while (Source[SourceIndex] != 0 );
+
+	if(status)
+	{
+		ReturnIndex = SourceIndex-ToBeFoundIndex;
+	}
+	else {
+		ReturnIndex=0xFF;
+	}
+
+	return ReturnIndex;
+
+}
 /****change decimal 16 bit to string ASCII ********/
 
 uint8_t U16_DEC_TO_STRING(uint16_t value, uint8_t *string)
@@ -318,3 +351,35 @@ void AVERAGE_VALUE_16(uint16_t value, uint16_t *average)
 		}
 
 }
+
+
+
+
+
+/****change decimal 16 bit to string ASCII ********/
+
+uint32_t STRING_TO_DEC_(uint8_t *string)
+{
+	uint8_t i, tempDig;
+	uint32_t mnoznik=1;
+	uint32_t tempValue=0;
+
+	i=0;
+	while (string[i]>=0x30 && string[i]<=0x39)
+	{
+
+		tempDig = string[i]-0x30;			// przejscie ze stringa na digit
+		tempValue+=tempDig;
+		i++;
+		if (string[i]>=0x30 && string[i]<=0x39)
+			tempValue*=10;
+
+		if (tempValue >=4000000000)
+		{
+			break;
+		}
+	}
+	return tempValue;
+
+}
+
