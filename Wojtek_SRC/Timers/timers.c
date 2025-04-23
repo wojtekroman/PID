@@ -54,7 +54,7 @@ uint32_t localSystemClock;
 	//SystemCoreClock
 	/* 1ms == 48000 */
 	TIM_TimeBaseStructure.TIM_Prescaler = (uint16_t) ((localSystemClock / 1000)-1 );	// 1000 => 1ms
-	TIM_TimeBaseStructure.TIM_Period = (uint16_t)100;
+	TIM_TimeBaseStructure.TIM_Period = (uint16_t)50;
  	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;			// counter counts from 0 up to Certain value which is auto reloaded (ARR reg) after Update Event V
  	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
  	TIM_TimeBaseInit(uC_TIMER_100ms, &TIM_TimeBaseStructure);
