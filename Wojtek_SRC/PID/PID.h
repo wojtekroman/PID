@@ -35,10 +35,10 @@ PID_t pid_capacitor;
 
 
 
-#define DEF_KP		300
-#define DEF_KI		10
+#define DEF_KP		800
+#define DEF_KI		15
 #define DEF_KD		4
-#define DEF_DT		10
+#define DEF_DT		1
 #define DEF_OUT_MIN	1
 #define DEF_OUT_MAX	10000
 #define DEF_TARGET 	2500

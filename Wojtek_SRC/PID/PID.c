@@ -111,7 +111,7 @@ uint16_t PID_Compute(PID_t* pid, uint16_t setpoint, uint16_t measurement)
     Iout = (pid->Ki * pid->integral) /100;		//	/ 1000 - time is in ms   ; /100 Ki is skaled *100
 
     // D
-    derivative = (error - pid->previous_error)*10 / pid->dt;	// *10 - time is in ms multiply by 100; 1000/100 =10
+    derivative = (error - pid->previous_error)/ (pid->dt*100);	// *10 - time is in ms multiply by 100; 1000/100 =10
     Dout = pid->Kd * derivative / 100;				// scaling of Ku
 
     // PID output

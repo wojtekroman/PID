@@ -85,7 +85,7 @@ int main(void)
 	 			else{
 	 				i=0;
 	 			}
-	 			switch (PID_Usart.RxBuffer[i])
+	 			switch ((PID_Usart.RxBuffer[i]& (~0x20)))
 	 			{
 	 				case 'T':
 	 				{
@@ -184,7 +184,7 @@ int main(void)
 	 					break;
 
 	 				}
-	 				case '?':
+	 				case 0x1F://'?':
 	 				{
 	 					pid_capacitor.sreg |= PID_PRINT_MASK;
 	 				}
@@ -284,7 +284,7 @@ int main(void)
 	 		if (pid_capacitor.sreg & PID_INIT)
 
 	 			{					//		Kp   Ki  Kd	 dt	min	max  	target
-	 				PID_Init(&pid_capacitor, 100, 10, 8, 10, 1, 10000, pid_capacitor.target);		// Kx *100 dt in ms target in mV
+	 				PID_Init(&pid_capacitor, 500, 10, 4, 1, 1, 10000, pid_capacitor.target);		// Kx *100 dt in ms target in mV
 					pid_capacitor.sreg &= ~PID_INIT;
 	 			}
 
@@ -299,7 +299,7 @@ int main(void)
 	 	 {
 	 		 if (Timers_100ms[TIMER_FAN_SPEED_CHANGE] == TIMER_STOP)
 	 		 {
-	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] =1; //PWM_Unit.FanSpeedChangeDelayValue;
+	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] =pid_capacitor.dt; //PWM_Unit.FanSpeedChangeDelayValue;
 	 		 }
 	 		 if (!Timers_100ms[TIMER_FAN_SPEED_CHANGE]  )
 	 		 {
@@ -307,8 +307,7 @@ int main(void)
 	 	 		temp_16 = (uint16_t)PID_Compute(&pid_capacitor, pid_capacitor.target, (uint16_t)PowerSupply.Voltage);
 	 	 		PWM_Unit.Fulfillment= (uint16_t)(((uint32_t)PWM_Unit.Freq * (uint32_t)temp_16)/(pid_capacitor.output_max));
 	 	 		PWM_Unit.TIMx->CCR1 =(uint16_t)PWM_Unit.Fulfillment;
-	 			Timers_100ms[TIMER_FAN_SPEED_CHANGE] = 1; //PWM_Unit.FanSpeedChangeDelayValue;
-
+	 	 		Timers_100ms[TIMER_FAN_SPEED_CHANGE] =pid_capacitor.dt;
 	 			if (!PID_Usart.TxCounter)
 		 		 {
 		 			 PID_Usart.TxBuffer[PID_Usart.TxCounter++] = 'V';
